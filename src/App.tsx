@@ -4,15 +4,21 @@ import About from "./page/About";
 import Footer from "./page/Footer";
 import Menu from "./page/Menu";
 import tw from "tailwind-styled-components";
+import Skiils from "./page/Skiils";
+import ProjectContent from "./page/ProjectContent";
 
 function App() {
   return (
     <>
       <Header />
-      <MainContainer>
+      <PageContainer>
         <Menu />
-        <About />
-      </MainContainer>
+        <ContentContainer>
+          <About />
+          <ProjectContent />
+          <Skiils />
+        </ContentContainer>
+      </PageContainer>
       <Footer />
     </>
   );
@@ -20,6 +26,8 @@ function App() {
 
 export default App;
 
-const MainContainer = tw.div`
+const ContentContainer = tw.div``;
+
+const PageContainer = tw.div`
 flex row-auto
 `;
