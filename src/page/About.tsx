@@ -1,13 +1,14 @@
 import React from "react";
 import { FaGithubSquare, FaEnvelope } from "react-icons/fa";
+// import Profile from "../img/ProfileCh.png";
 
 export default function About() {
   return (
     <>
       <div className="About">
-        <img src="" alt="ProfilePic" />
+        <img src="../img/ProfileCh.png" alt="ProfilePic" />
         <div className="Introduce">
-          <div> 이름 </div>
+          <div> 신은진 </div>
           <div className="Comment">
             <p>
               안녕하세요! <b>ㅇㅇ 개발자</b> ㅇㅇㅇ입니다.
