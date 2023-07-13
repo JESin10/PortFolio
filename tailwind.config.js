@@ -19,6 +19,8 @@ module.exports = {
         Auto: "auto",
         BtnW: "170px",
         BtnH: "80px",
+        SkillBoxW: "330px",
+        SkillBoxH: "200px",
       },
     },
   },

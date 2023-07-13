@@ -26,4 +26,4 @@ node_modules
 db.json
 .env
 
-img
+#img
