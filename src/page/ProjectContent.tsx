@@ -8,7 +8,7 @@ export default function ProjectContent() {
       <Title className="Title">Project</Title>
       <div className="title"> 팀프로젝트</div>
       <Project
-        img={JSON.stringify(["1", "2"])}
+        img={JSON.stringify(["", ""])}
         title="개인포트폴리오 사이트"
         date="2023.00.00 - 2023.00.00"
         desc="개인포트폴리오사이트입니다"
@@ -16,7 +16,7 @@ export default function ProjectContent() {
         backend={null}
         repository="https://github.com/JESin10/PortFolio"
         deployment="Vercel"
-        posting="https://velog.io/@jin_s"
+        posting="https://velog.io/@jin_s/WIL-23.07.16"
         modalContent="11"
       />
       <div>

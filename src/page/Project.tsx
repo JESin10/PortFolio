@@ -1,6 +1,5 @@
 import React, { ReactNode } from "react";
 import tw from "tailwind-styled-components";
-import ProjectContent from "./ProjectContent";
 
 interface ProjectProps {
   img: string;
@@ -31,31 +30,48 @@ export default function Project({
 }: ProjectProps) {
   return (
     <div>
-      <div>
-        {img && JSON.parse(img).map((src: string) => <img src={src} alt={src} key={src} />)}
-      </div>
       <div className="Container">
-        <h2>{title}</h2>
-        <div>{date}</div>
-        <div>{children}</div>
-        <div className="ModalDesc">
-          <div className="modalContainer">modalContent={modalContent}</div>
+        <div>
+          {img &&
+            JSON.parse(img).map((src: string) => (
+              <img className="w-ImgBoxW h-ImgBoxH" src={src} alt={src} key={src} />
+            ))}
         </div>
-        <hr />
-        <div className="descTitle">간단 설명</div>
-        <div className="descContent">{desc}</div>
+        <Title>{title}</Title>
+        <div>{date}</div>
         <div className="repo">
-          <a href={repository}>{repository}</a>
+          <a href={repository}>
+            <Emphasis>Github</Emphasis> {repository}
+          </a>
         </div>
         {posting && (
           <>
-            <div className="descTItle">회고</div>
-            <div className="descContent">
-              <a href={posting}>{posting}</a>
+            <div className="posting">
+              <a href={posting}>
+                {" "}
+                <Emphasis>Blog</Emphasis> {posting}
+              </a>
             </div>
           </>
         )}
-        <div className="descTitle">FE Skill</div>
+        {deployment && (
+          <>
+            <div className="posting">
+              <a href={deployment}>
+                <Emphasis>Depo</Emphasis> {deployment}
+              </a>
+            </div>
+          </>
+        )}
+      </div>
+      <br></br>
+      <div className="Container">
+        <div>{children}</div>
+        <div className="ModalDesc">
+          <div className="modalContainer">{modalContent}</div>
+        </div>
+        <hr />
+        <Title className="descTitle">FE Skill</Title>
         <div className="descContent">{frontend}</div>
         {backend && (
           <>
@@ -63,7 +79,16 @@ export default function Project({
             <div className="descContent">{backend}</div>
           </>
         )}
+        <Title className="descTitle">Description</Title>
+        <div className="descContent">{desc}</div>
       </div>
     </div>
   );
 }
+
+const Title = tw.div`
+  font-bold text-xl
+`;
+const Emphasis = tw.span`
+font-bold  
+`;

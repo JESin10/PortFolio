@@ -26,7 +26,9 @@ function App() {
 
 export default App;
 
-const ContentContainer = tw.div``;
+const ContentContainer = tw.div`
+space-y-10 p-6
+`;
 
 const PageContainer = tw.div`
 flex row-auto
