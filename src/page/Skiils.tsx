@@ -2,7 +2,7 @@ import tw from "tailwind-styled-components";
 
 export default function Skiils() {
   return (
-    <Skill className="SkillPage">
+    <Skill className="SkillPage" id="skill">
       <Title className="Title">Skill</Title>
       <div className="SubTitle">FrontEnd</div>
       <SkillWrapper className="SkillWrapper">

@@ -1,12 +1,13 @@
 import React from "react";
 import { FaGithubSquare, FaEnvelope } from "react-icons/fa";
-// import Profile from "../img/ProfileCh.png";
+import { loadImg } from "../assets/images";
+import tw from "tailwind-styled-components";
 
 export default function About() {
   return (
     <>
-      <div className="About">
-        <img src="../img/ProfileCh.png" alt="ProfilePic" />
+      <div className="About" id="about">
+        <ProfileImg src={loadImg.Profile} alt="ProfilePic" />
         <div className="Introduce">
           <div> 신은진 </div>
           <div className="Comment">
@@ -17,7 +18,8 @@ export default function About() {
           </div>
           <div className="DescriptionContainer">
             <div className="DescList">
-              &nbsp; ~~에서 ~~한 경험이 있습니다 <b>강조</b>~~하는 것을 배웠습니다
+              &nbsp; ~~에서 ~~한 경험이 있습니다 <b>강조</b>~~하는 것을
+              배웠습니다
             </div>
           </div>
         </div>
@@ -27,17 +29,29 @@ export default function About() {
           </button> */}
           <div className="ButtonContainer">
             <button aria-label="email-button">
-              <a href="mailto:shinej1029@gmail.com" target="_blank" aria-label="email-link">
+              <a
+                href="mailto:shinej1029@gmail.com"
+                target="_blank"
+                aria-label="email-link"
+              >
                 <FaEnvelope size="50px" />
               </a>
             </button>
             <button aria-label="github-button">
-              <a href="https://github.com/JESin10" target="_blank" aria-label="github-link">
+              <a
+                href="https://github.com/JESin10"
+                target="_blank"
+                aria-label="github-link"
+              >
                 <FaGithubSquare size="50px" />
               </a>
             </button>
             <button aria-label="blog-button">
-              <a href="https://velog.io/@jin_s/" target="_blank" aria-label="blog-link">
+              <a
+                href="https://velog.io/@jin_s/"
+                target="_blank"
+                aria-label="blog-link"
+              >
                 <img src="src/img/velog.svg" />
               </a>
             </button>
@@ -47,3 +61,6 @@ export default function About() {
     </>
   );
 }
+
+const ProfileImg = tw.img`
+w-60 h-60`;

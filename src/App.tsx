@@ -1,8 +1,7 @@
 import React from "react";
-import Header from "./page/Header";
 import About from "./page/About";
 import Footer from "./page/Footer";
-import Menu from "./page/Menu";
+import Menu from "./modules/Menu";
 import tw from "tailwind-styled-components";
 import Skiils from "./page/Skiils";
 import ProjectContent from "./page/ProjectContent";
@@ -10,7 +9,6 @@ import ProjectContent from "./page/ProjectContent";
 function App() {
   return (
     <>
-      <Header />
       <PageContainer>
         <Menu />
         <ContentContainer>
@@ -27,9 +25,9 @@ function App() {
 export default App;
 
 const ContentContainer = tw.div`
-space-y-10 p-6
+space-y-10 mx-auto mt-TabH w-full
 `;
 
 const PageContainer = tw.div`
-flex row-auto
+flex row-auto w-full
 `;

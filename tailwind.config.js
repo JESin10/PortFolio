@@ -7,9 +7,9 @@ module.exports = {
       colors: {
         Main: "#003366",
         Sub1: "#4C7093",
-        Hightlight: "#FFFFFF",
         Nomal: "#d9d9d9",
         NomalD: "#B8B8B8",
+        Hightlight: "#F5F085",
       },
       spacing: {
         TabH: "125px",

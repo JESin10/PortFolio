@@ -34,7 +34,7 @@ export default function Project({
         <div>
           {img &&
             JSON.parse(img).map((src: string) => (
-              <img className="w-ImgBoxW h-ImgBoxH" src={src} alt={src} key={src} />
+              <ProjectImg src={src} alt={src} key={src} />
             ))}
         </div>
         <Title>{title}</Title>
@@ -91,4 +91,10 @@ const Title = tw.div`
 `;
 const Emphasis = tw.span`
 font-bold  
+`;
+
+const ProjectImg = tw.img`
+w-ImgBoxW h-ImgBoxH object-contain
+border-solid border-2 rounded-md border-gray-300
+
 `;
