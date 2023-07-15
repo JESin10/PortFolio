@@ -3,4 +3,6 @@ export const loadImg = {
   PP2: "./image/PPmobile.png",
   Profile: "./image/profile.png",
   Blog: "./image/velog.svg",
+  Email: "./image/Email.svg",
+  Github: "./image/github.svg",
 };
