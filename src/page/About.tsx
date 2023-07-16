@@ -13,7 +13,8 @@ export default function About() {
             <div> 신은진 </div>
             <div className="Comment">
               <p>
-                안녕하세요! <b>끊임없이 걸어가는 프론트엔드 개발자</b> 신은진입니다.
+                안녕하세요! <b>끊임없이 걸어가는 프론트엔드 개발자</b>{" "}
+                신은진입니다.
               </p>
               {/* <p>ㅇㅇㅇ하고 있습니다</p> */}
             </div>
@@ -21,15 +22,17 @@ export default function About() {
               <div className="DescList">
                 <p>
                   1️⃣ 트렌드를 파악하는 개발자로서{" "}
-                  <b>새로운 과제를 흥미롭게 받아들이며, 배움에 열려있는</b> 개발자가 되고자 합니다.
+                  <b>새로운 과제를 흥미롭게 받아들이며, 배움에 열려있는</b>{" "}
+                  개발자가 되고자 합니다.
                 </p>
                 <p>
-                  2️⃣ 혼자 일하지 않습니다. 그렇기 때문에 팀으로 함께 일하는 동료들이
+                  2️⃣ 혼자 일하지 않습니다. 그렇기 때문에 팀으로 함께 일하는
+                  동료들이
                   <b>협업하고 싶어하는 사람</b>이 되고자 합니다.
                 </p>
                 <p>
-                  3️⃣ 끊임없이 <b>학습하고</b>, 끊임없이 <b>받아들이며</b>, 끊임없이{" "}
-                  <b>노력하겠습니다</b>.
+                  3️⃣ 끊임없이 <b>학습하고</b>, 끊임없이 <b>받아들이며</b>,
+                  끊임없이 <b>노력하겠습니다</b>.
                 </p>
                 {/* &nbsp; ~~에서 ~~한 경험이 있습니다 <b>강조</b>~~하는 것을 배웠습니다 */}
               </div>
@@ -80,12 +83,12 @@ export default function About() {
   );
 }
 
-const ProfileImg = tw.img`
-w-60 h-60 bg-red-200
+const AboutMainConatiner = tw.div`
+w-3/4 h-auto mx-auto my-5 bg-blue-300 p-10
 `;
 
-const AboutMainConatiner = tw.div`
-w-3/4 h-auto  mx-auto my-5
+const ProfileImg = tw.img`
+w-60 h-60 bg-yellow-100 
 `;
 
 const MainProfile = tw.div` 
