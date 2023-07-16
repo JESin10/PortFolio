@@ -9,8 +9,10 @@ export default function About() {
         <MainProfile>
           <ProfileImg src={loadImg.Profile} alt="ProfilePic" />
           <div className="Introduce">
-            <div> 신은진 </div>
-            <div className="Comment">
+            <div className="text-3xl font-bold border-b-2 border-solid w-fit border-Main my-5">
+              신은진
+            </div>
+            <div className="Comment my-2">
               <p>
                 안녕하세요! <b>끊임없이 걸어가는 프론트엔드 개발자</b>{" "}
                 신은진입니다.
@@ -19,20 +21,17 @@ export default function About() {
             </div>
             <div className="DescriptionContainer">
               <div className="DescList">
-                <p>
-                  1️⃣ 트렌드를 파악하는 개발자로서{" "}
-                  <b>새로운 과제를 흥미롭게 받아들이며, 배움에 열려있는</b>{" "}
-                  개발자가 되고자 합니다.
-                </p>
-                <p>
-                  2️⃣ 혼자 일하지 않습니다. 그렇기 때문에 팀으로 함께 일하는
-                  동료들이
-                  <b>협업하고 싶어하는 사람</b>이 되고자 합니다.
-                </p>
-                <p>
-                  3️⃣ 끊임없이 <b>학습하고</b>, 끊임없이 <b>받아들이며</b>,
-                  끊임없이 <b>노력하겠습니다</b>.
-                </p>
+                1️⃣ 트렌드를 파악하는 개발자로서{" "}
+                <b>새로운 과제를 흥미롭게 받아들이며, 배움에 열려있는</b>{" "}
+                개발자가 되고자 합니다.
+                <P />
+                2️⃣ 혼자 일하지 않습니다. 그렇기 때문에 팀으로 함께 일하는
+                동료들이
+                <b>협업하고 싶어하는 사람</b>이 되고자 합니다.
+                <P />
+                3️⃣ 끊임없이 <b>학습하고</b>, 끊임없이 <b>받아들이며</b>,
+                끊임없이 <b>노력하겠습니다</b>.
+                <P />
                 {/* &nbsp; ~~에서 ~~한 경험이 있습니다 <b>강조</b>~~하는 것을 배웠습니다 */}
               </div>
             </div>
@@ -83,7 +82,7 @@ export default function About() {
 }
 
 const AboutMainConatiner = tw.div`
-w-3/4 h-auto mx-auto my-5 bg-blue-300 p-10
+w-3/4 h-auto mx-auto my-5 p-10  bg-gray-300 
 `;
 
 const ProfileImg = tw.img`
@@ -100,3 +99,6 @@ text-right mr-40
 const ImgBtn = tw.img`
 w-16 h-16 bg-white p-2 rounded-md 
 border-solid border shadow border-NomalD mx-2`;
+
+const P = tw.p`
+mb-2`;
