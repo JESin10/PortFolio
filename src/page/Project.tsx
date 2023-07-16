@@ -1,5 +1,8 @@
 import React, { ReactNode } from "react";
 import tw from "tailwind-styled-components";
+import Carousel from "../modules/Carousel";
+import { loadImg } from "../assets/images";
+import { FaInfoCircle, FaTools } from "react-icons/fa";
 
 interface ProjectProps {
   img: string;
@@ -12,7 +15,8 @@ interface ProjectProps {
   deployment: string | null;
   posting: string | null;
   children?: ReactNode;
-  modalContent: string;
+  modalContent: string | null;
+  feature: string;
 }
 
 export default function Project({
@@ -27,74 +31,109 @@ export default function Project({
   posting,
   children,
   modalContent,
+  feature,
 }: ProjectProps) {
   return (
     <div>
-      <div className="Container">
-        <div>
+      <ProjectContainer className="Container">
+        <Carousel>
           {img &&
             JSON.parse(img).map((src: string) => (
-              <ProjectImg src={src} alt={src} key={src} />
+              <ProjectImg className="proImg" src={src} alt={src} key={src} />
             ))}
-        </div>
-        <Title>{title}</Title>
-        <div>{date}</div>
-        <div className="repo">
-          <a href={repository}>
-            <Emphasis>Github</Emphasis> {repository}
-          </a>
-        </div>
-        {posting && (
-          <>
-            <div className="posting">
-              <a href={posting}>
-                {" "}
-                <Emphasis>Blog</Emphasis> {posting}
-              </a>
+        </Carousel>
+        <div className="MainDesc ml-10 my-auto">
+          <div className="font-bold text-2xl mt-3 mr-3">{title}</div>
+          <div className="ProjectDate mb-8">{date}</div>
+          {/* - - - - - - - - - - - - - - */}
+          <div className="repo mb-2">
+            <a href={repository} target="_blank" rel="noreferrer">
+              <div className="flex items-center">
+                <Emphasis>
+                  <PostIcon src={loadImg.Github} alt="Github" />
+                  Github
+                </Emphasis>
+                {repository}
+              </div>
+            </a>
+          </div>
+          {posting && (
+            <>
+              <div className="posting mb-2">
+                <a href={posting} target="_blank" rel="noreferrer">
+                  <div className="flex items-center">
+                    <Emphasis>
+                      <PostIcon src={loadImg.Blog} alt="Velog" />
+                      Blog
+                    </Emphasis>
+                    {posting}
+                  </div>
+                </a>
+              </div>
+            </>
+          )}
+          {deployment && (
+            <>
+              <div className="posting mb-2">
+                <a href={deployment} target="_blank" rel="noreferrer">
+                  <div className="flex items-center">
+                    <Emphasis>
+                      <PostIcon src={loadImg.Depo} alt="Depoloyment" />
+                      Depo
+                    </Emphasis>
+                    {deployment}
+                  </div>
+                </a>
+              </div>
+            </>
+          )}
+          <div className="FeatureContainer inline-flex items-center mb-2">
+            <FaTools />
+            <div className="featureConatiner ml-2 w-fit ">{feature}</div>
+          </div>
+          <div>{children}</div>
+          {modalContent && (
+            <div className="ModalDesc inline-flex items-center">
+              <FaInfoCircle />
+              <div className="modalContainer ml-2">{modalContent}</div>
             </div>
-          </>
-        )}
-        {deployment && (
-          <>
-            <div className="posting">
-              <a href={deployment}>
-                <Emphasis>Depo</Emphasis> {deployment}
-              </a>
-            </div>
-          </>
-        )}
-      </div>
-      <br></br>
+          )}
+        </div>
+      </ProjectContainer>
+      <br />
       <div className="Container">
-        <div>{children}</div>
-        <div className="ModalDesc">
-          <div className="modalContainer">{modalContent}</div>
-        </div>
-        <hr />
         <Title className="descTitle">FE Skill</Title>
-        <div className="descContent">{frontend}</div>
+        <span className="descContent">{frontend}</span>
+        <br />
         {backend && (
           <>
-            <div className="descTitle">BE Skill</div>
-            <div className="descContent">{backend}</div>
+            <Title className="descTitle">BE Skill</Title>
+            <span className="descContent mb-3">{backend}</span>
+            <br />
           </>
         )}
         <Title className="descTitle">Description</Title>
-        <div className="descContent">{desc}</div>
+        <div className="descContent mb-2">{desc}</div>
       </div>
     </div>
   );
 }
 
 const Title = tw.div`
-  font-bold text-xl
+font-bold text-2xl mt-3 mr-3
+bg-Main text-white w-fit
 `;
-const Emphasis = tw.span`
-font-bold  
+const Emphasis = tw.div`
+font-bold inline-flex items-center mr-2 text-Main
 `;
 
 const ProjectImg = tw.img`
 w-ImgBoxW h-ImgBoxH object-contain
 border-solid border-2 rounded-md border-gray-300
-
 `;
+
+const ProjectContainer = tw.div`
+flex items-start
+`;
+
+const PostIcon = tw.img`w-4 h-4 mr-2`;

@@ -1,5 +1,4 @@
 import React from "react";
-import { FaGithubSquare, FaEnvelope } from "react-icons/fa";
 import { loadImg } from "../assets/images";
 import tw from "tailwind-styled-components";
 

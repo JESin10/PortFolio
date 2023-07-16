@@ -61,7 +61,7 @@ export default function Navbar() {
           </MainButton>
         </div>
         <div
-          className="rounded-md hidden w-full md:block md:w-auto"
+          className="rounded-md w-full md:block md:w-auto"
           id="navbar-sticky"
         >
           <MenuContainer>
@@ -113,7 +113,7 @@ export default function Navbar() {
 const Nav = tw.nav`
 w-full h-TabH bg-Main font-bold text-white text-3xl
 text-center border-b border-gray-200
-px-2 py-2.5 fixed 
+px-2 py-2.5 fixed z-10
 sm:px-4  
 dark:bg-gray-900 dark:border-gray-600
 `;

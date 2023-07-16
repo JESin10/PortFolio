@@ -1,6 +1,6 @@
 module.exports = {
   purge: ["./src/**/*.{js,jsx,ts,tsx}"],
-  darkmode: [],
+  darkmode: "class",
   // main color setting 가능
   theme: {
     extend: {
