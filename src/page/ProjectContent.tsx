@@ -16,7 +16,7 @@ export default function ProjectContent() {
         frontend="React, TypeScript Tailwind, Styled-components"
         backend={null}
         repository="https://github.com/JESin10/PortFolio"
-        deployment="Vercel"
+        deployment="https://portfolio-topaz-phi-92.vercel.app"
         posting="https://velog.io/@jin_s/WIL-23.07.16"
         modalContent={null}
         feature="개인정보제공, 프로젝트 내역, 스킬"
