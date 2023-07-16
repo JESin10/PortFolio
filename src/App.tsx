@@ -13,7 +13,7 @@ function App() {
         <Menu />
         <ContentContainer>
           <About />
-          <ProjectContent />
+          {/* <ProjectContent /> */}
           <Skiils />
         </ContentContainer>
       </PageContainer>

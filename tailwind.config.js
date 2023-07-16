@@ -16,7 +16,6 @@ module.exports = {
         FooterH: "100px",
         MenuW: "250px",
         onePage: "1117px",
-        Auto: "auto",
         BtnW: "170px",
         BtnH: "80px",
         SkillBoxW: "330px",
