@@ -4,8 +4,9 @@ import tw from "tailwind-styled-components";
 
 export default function About() {
   return (
-    <>
-      <AboutMainConatiner className="About" id="about">
+    <AboutMain>
+      <Title className="Title">Skill</Title>
+      <FullConatiner className="About" id="about">
         <ProfileImg src={loadImg.Profile} alt="ProfilePic" />
         <div className="IntroduceConatiner">
           <InfoContainer className="Introduce">
@@ -79,13 +80,22 @@ export default function About() {
             </button>
           </ContactConatiner>
         </div>
-      </AboutMainConatiner>
-    </>
+      </FullConatiner>
+    </AboutMain>
   );
 }
 
-const AboutMainConatiner = tw.div`
-w-3/4 h-auto mx-auto my-5 p-10 flex gap-5
+const Title = tw.div`
+font-bold text-3xl w-fit mb-4 p-2
+border-solid border-b-4 border-Main
+`;
+
+const AboutMain = tw.div`
+w-3/4 h-auto mx-auto my-5 p-10
+`;
+
+const FullConatiner = tw.div`
+w-full h-auto flex gap-5
 `;
 
 const ProfileImg = tw.img`
@@ -95,12 +105,12 @@ const ContactConatiner = tw.div`
 text-right mt-5
 `;
 
+const InfoContainer = tw.div`
+w-fit h-auto ml-8`;
+
 const BtnImg = tw.img`
 w-16 h-16 bg-white p-2 rounded-md 
 border-solid border shadow border-NomalD mx-2`;
-
-const InfoContainer = tw.div`
-w-fit h-auto ml-5`;
 
 const P = tw.p`mb-2`;
 

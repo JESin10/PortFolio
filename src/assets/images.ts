@@ -10,7 +10,7 @@ export const loadImg = {
   Github: "./image/github.svg",
   Depo: "./image/deployment.svg",
 
-  PF1: "",
-  PF2: "",
-  PF3: "",
+  PF1: "./image/PF1.png",
+  PF2: "./image/PF2.png",
+  PF3: "./image/PF3.png",
 };
