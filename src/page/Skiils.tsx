@@ -71,11 +71,12 @@ export default function Skiils() {
 }
 
 const Skill = tw.div`
-p-10 w-3/4 mx-auto bg-green-100
+p-10 w-3/4 mx-auto border-black border-solid border-4
 `;
 
 const Title = tw.div`
-font-bold text-3xl
+font-bold text-3xl w-fit mb-4 p-2
+border-solid border-b-4 border-Main
 `;
 
 const SubTitle = tw.div`

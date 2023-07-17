@@ -45,9 +45,10 @@ export default function Footer() {
 }
 
 const FooterContainer = tw.div`
-w-full h-FooterH bg-Nomal text-lg
-text-center font-bold `;
+w-full h-FooterH bg-Nomal text-md
+text-center font-bold 
+`;
 
 const ImgBtn = tw.img`
-w-11 h-11 bg-Nomal p-2 rounded-md 
+w-11 h-11 bg-Nomal p-2 rounded-md
 border-none m-2 `;

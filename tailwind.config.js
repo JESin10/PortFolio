@@ -20,7 +20,7 @@ module.exports = {
         BtnH: "80px",
         SkillBoxW: "330px",
         SkillBoxH: "200px",
-        ImgBoxW: "550px",
+        ImgBoxW: "500px",
         ImgBoxH: "320px",
       },
     },

@@ -1,27 +1,19 @@
 import React, { ReactNode } from "react";
-// import "slick-carousel/slick/slick.css";
-// import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import tw from "tailwind-styled-components";
 import Slider, { CustomArrowProps } from "react-slick";
 import { FaAngleRight, FaAngleLeft } from "react-icons/fa";
 
-const NextArrow = ({
-  currentSlide,
-  slideCount,
-  ...props
-}: CustomArrowProps) => (
+const NextArrow = ({ currentSlide, slideCount, ...props }: CustomArrowProps) => (
   <div {...props}>
     <FaAngleRight className="NextArrow" size="30px" color="black" />
   </div>
 );
 
-const PrevArrow = ({
-  currentSlide,
-  slideCount,
-  ...props
-}: CustomArrowProps) => (
+const PrevArrow = ({ currentSlide, slideCount, ...props }: CustomArrowProps) => (
   <div {...props}>
-    <FaAngleLeft className="PrevArrow" size="30px" color="black" />
+    <FaAngleLeft className="PrevArrow" size="30px" color="black" style={{ marginRight: "10px" }} />
   </div>
 );
 
@@ -76,5 +68,7 @@ const SliderWrapper = tw.div`
 // lg:mt-10 lg:ml-7
 
 const StyledSlider = tw(Slider)`
-  mx-auto w-[16rem] sm:w-[30rem] md:w-[30rem] lg:w-[30rem] mb-5 
+  mx-auto mb-5 
+  w-56 md:w-80 lg:w-ImgBoxW
 `;
+//w-[16rem]  sm:w-[30rem] md:w-[30rem] lg:w-[30rem]

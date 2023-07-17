@@ -3,7 +3,7 @@ import { Collapse } from "flowbite";
 import tw from "tailwind-styled-components";
 
 export default function Navbar() {
-  const ProtFolioSite = "http://naver.com";
+  const ProtFolioSite = "https://portfolio-topaz-phi-92.vercel.app/";
 
   let aboutComponent: HTMLElement;
   let projectComponent: HTMLElement;
@@ -12,12 +12,8 @@ export default function Navbar() {
 
   useEffect(() => {
     // navbar 기능
-    const targetEl: HTMLElement = document.getElementById(
-      "targetEl"
-    ) as HTMLElement;
-    const triggerEl: HTMLElement = document.getElementById(
-      "triggerEl"
-    ) as HTMLElement;
+    const targetEl: HTMLElement = document.getElementById("targetEl") as HTMLElement;
+    const triggerEl: HTMLElement = document.getElementById("triggerEl") as HTMLElement;
 
     if (targetEl && triggerEl) {
       const collapse = new Collapse(targetEl, triggerEl);
@@ -33,8 +29,9 @@ export default function Navbar() {
     <Nav className="menunav">
       <NavContainer className="container">
         <a href={ProtFolioSite} className="flex items-center">
-          <PageTitle>Portfolio</PageTitle>
+          <PageTitle>EunJin's</PageTitle>
         </a>
+        {/* responsive */}
         <div className="flex md:order-2">
           <MainButton
             id="triggerEl"
@@ -43,8 +40,6 @@ export default function Navbar() {
             aria-controls="navbar-sticky"
             aria-expanded="false"
           >
-            {" "}
-            button
             <svg
               className="w-6 h-6"
               aria-hidden="true"
@@ -60,17 +55,12 @@ export default function Navbar() {
             </svg>
           </MainButton>
         </div>
-        <div
-          className="rounded-md w-full md:block md:w-auto"
-          id="navbar-sticky"
-        >
+        <div className="rounded-md w-full md:block md:w-auto flex justify-end" id="navbar-sticky">
           <MenuContainer>
             <li>
               <MenuTag
                 aria-current="page"
-                onClick={() =>
-                  aboutComponent?.scrollIntoView({ behavior: "smooth" })
-                }
+                onClick={() => aboutComponent?.scrollIntoView({ behavior: "smooth" })}
               >
                 About
               </MenuTag>
@@ -78,19 +68,13 @@ export default function Navbar() {
             <li>
               <MenuTag
                 aria-current="page"
-                onClick={() =>
-                  projectComponent?.scrollIntoView({ behavior: "smooth" })
-                }
+                onClick={() => projectComponent?.scrollIntoView({ behavior: "smooth" })}
               >
                 Project
               </MenuTag>
             </li>
             <li>
-              <MenuTag
-                onClick={() =>
-                  skillComponent?.scrollIntoView({ behavior: "smooth" })
-                }
-              >
+              <MenuTag onClick={() => skillComponent?.scrollIntoView({ behavior: "smooth" })}>
                 Skill
               </MenuTag>
             </li>
@@ -114,32 +98,31 @@ const Nav = tw.nav`
 w-full h-TabH bg-Main font-bold text-white text-3xl
 text-center border-b border-gray-200
 px-2 py-2.5 fixed z-10
-sm:px-4  
-dark:bg-gray-900 dark:border-gray-600
 `;
 
 const NavContainer = tw.div`
-max-w-[70rem] flex flex-wrap items-center justify-between mx-auto
+w-full h-auto my-5
+max-w-[70rem] inline-flex flex-wrap items-center justify-between mx-auto
 `;
 
 const PageTitle = tw.span`
-self-center text-xl md:text-2xl font-semibold whitespace-nowrap dark:text-white
+self-center text-xl font-semibold whitespace-nowrap
+md:text-3xl hover:text-Hightlight ml-5
 `;
 
 const MenuContainer = tw.ul`
-flex flex-col
-p-4 mt-4  
+flex flex-col p-4  
 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:ml-[40%] md:font-medium md:border-0
-dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700
 `;
 
 const MenuTag = tw.a`
 block cursor-pointer  
 py-2 px-auto border-solid border-Nomal border-b-2 outline-none
-text-Main text-lg font-bold bg-white
+md:text-white md:bg-transparent
+text-lg font-bold bg-white
+text-Main w-24
 md:hover:bg-transparent md:hover:text-Hightlight md:p-0 
-md:dark:hover:text-white md:dark:hover:bg-transparent
-dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white  dark:border-gray-700`;
+`;
 
 const MainButton = tw.button`
 inline-flex items-center p-2 
@@ -147,5 +130,4 @@ text-sm text-Nomal
 rounded-lg md:hidden 
 hover:bg-gray-100 hover:text-Main 
 focus:outline-none focus:ring-2 focus:ring-gray-200
-dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600
 `;
