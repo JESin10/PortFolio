@@ -51,9 +51,8 @@ export default function Project({
               <div className="flex items-center">
                 <Emphasis>
                   <PostIcon src={loadImg.Github} alt="Github" />
-                  Github
+                  Github ⏎
                 </Emphasis>
-                {repository}
               </div>
             </a>
           </div>
@@ -64,9 +63,8 @@ export default function Project({
                   <div className="flex items-center">
                     <Emphasis>
                       <PostIcon src={loadImg.Blog} alt="Velog" />
-                      Blog
+                      Blog ⏎
                     </Emphasis>
-                    {posting}
                   </div>
                 </a>
               </div>
@@ -79,9 +77,8 @@ export default function Project({
                   <div className="flex items-center">
                     <Emphasis>
                       <PostIcon src={loadImg.Depo} alt="Depoloyment" />
-                      Depo
+                      Depo ⏎
                     </Emphasis>
-                    {deployment}
                   </div>
                 </a>
               </div>
@@ -121,16 +118,17 @@ export default function Project({
 
 const Title = tw.div`
 font-bold text-2xl mt-3 mr-3
-bg-Main text-white w-fit
+bg-Main/80 text-white w-fit
 `;
 const Emphasis = tw.div`
 font-bold inline-flex items-center mr-2 text-Main
 `;
 
 const ProjectImg = tw.img`
-w-ImgBoxW h-ImgBoxH object-contain
-border-solid border-2 rounded-md border-gray-300
+md:w-ImgBoxW md:h-ImgBoxH object-contain
+w-auto h-44
 `;
+// border-solid border-2 rounded-md border-Nomal
 
 const ProjectContainer = tw.div`
 flex items-start
