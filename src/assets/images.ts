@@ -5,6 +5,7 @@ export const loadImg = {
   PP4: "./image/PPerror.png",
   Profile: "./image/profile.png",
   Blog: "./image/velog.svg",
+  Resume: "./image/document.svg",
   Email: "./image/Email.svg",
   Github: "./image/github.svg",
   Depo: "./image/deployment.svg",
