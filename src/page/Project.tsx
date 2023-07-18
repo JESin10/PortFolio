@@ -86,7 +86,7 @@ export default function Project({
           )}
           <div className="FeatureContainer inline-flex items-center mb-2">
             <FaTools />
-            <div className="featureConatiner ml-2 w-fit ">{feature}</div>
+            <div className="featureConatiner ml-2 w-fit">{feature}</div>
           </div>
           <div>{children}</div>
           {modalContent && (
@@ -117,7 +117,7 @@ export default function Project({
 }
 
 const Title = tw.div`
-font-bold text-2xl mt-3 mr-3
+font-bold text-lg mt-3 mr-3 p-1
 bg-Main/80 text-white w-fit
 `;
 const Emphasis = tw.div`

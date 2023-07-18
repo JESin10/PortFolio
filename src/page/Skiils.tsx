@@ -12,56 +12,56 @@ export default function Skiils() {
         <SkillBox className="SkillBox">
           <SkillTitle className="React">React</SkillTitle>
           <SkillContentBox>
-            <li> ◻︎ 1</li>
-            <li> ◻︎ 2</li>
-            <li> ◻︎ 3</li>
+            <li> ◻︎ 컴포넌트 단위의 설계</li>
+            <li> ◻︎ 성능 개선 경험</li>
+            <li> ◻︎ CSR 방식의 SPA 구축 경험</li>
           </SkillContentBox>
         </SkillBox>
         {/* - - - - - - - */}
         <SkillBox className="SkillBox">
           <SkillTitle className="JS">JavaScript</SkillTitle>
           <SkillContentBox>
-            <li> ◻︎ 1</li>
-            <li> ◻︎ 2</li>
-            <li> ◻︎ 3</li>
+            <li> ◻︎ JS를 사용한 개인, 팀 프로젝트 진행</li>
+            <li> ◻︎ 기본 문법, ES6 문법을 활용한 개발 경험</li>
+            <li> </li>
           </SkillContentBox>
         </SkillBox>
         {/* - - - - - - - */}
         <SkillBox className="SkillBox">
           <SkillTitle className="TS">TypeScript</SkillTitle>
           <SkillContentBox>
-            <li> ◻︎ 1</li>
-            <li> ◻︎ 2</li>
-            <li> ◻︎ 3</li>
+            <li> ◻︎ TS를 사용한 개인 프로젝트 진행</li>
+            <li> ◻︎ 타입 추론을 활용한 개발 경험</li>
+            <li> </li>
           </SkillContentBox>
         </SkillBox>
         {/* - - - - - - - */}
-      </SkillWrapper>
-      <SkillWrapper className="SkillWrapper">
+        {/* </SkillWrapper> */}
+        {/* <SkillWrapper className="SkillWrapper"> */}
         <SkillBox className="SkillBox">
           <SkillTitle className="Redux">Redux</SkillTitle>
           <SkillContentBox>
-            <li> ◻︎ 1</li>
-            <li> ◻︎ 2</li>
-            <li> ◻︎ 3</li>
+            <li> ◻︎ thunk를 사용한 개인프로젝트 진행</li>
+            <li> ◻︎ 전역상태관리, 모달 관리 경험</li>
+            <li> </li>
           </SkillContentBox>
         </SkillBox>
         {/* - - - - - - - */}
         <SkillBox className="SkillBox">
           <SkillTitle className="React-query">React-query</SkillTitle>
           <SkillContentBox>
-            <li> ◻︎ 1</li>
-            <li> ◻︎ 2</li>
-            <li> ◻︎ 3</li>
+            <li> ◻︎ Query를 사용한 팀 프로젝트 진행</li>
+            <li> ◻︎ state 값에 따른 페이지네이션, 무한스크롤 관리 경험</li>
+            <li> </li>
           </SkillContentBox>
         </SkillBox>
         {/* - - - - - - - */}
         <SkillBox className="SkillBox ">
-          <SkillTitle className="Css">Css</SkillTitle>
+          <SkillTitle className="Css">Css FrameWork</SkillTitle>
           <SkillContentBox>
-            <li> ◻︎ 1</li>
-            <li> ◻︎ 2</li>
-            <li> ◻︎ 3</li>
+            <li> ◻︎ TailWind</li>
+            <li> ◻︎ Styled-components</li>
+            <li> ◻︎ Bootstrap, Skeleton</li>
           </SkillContentBox>
         </SkillBox>
         {/* - - - - - - - */}
@@ -71,7 +71,7 @@ export default function Skiils() {
 }
 
 const Skill = tw.div`
-p-10 w-3/4 mx-auto border-black border-solid border-4
+px-10 w-3/4 mx-auto pb-10
 `;
 
 const Title = tw.div`
@@ -85,14 +85,22 @@ bg-Main text-Hightlight font-bold
 `;
 
 const SkillWrapper = tw.div`
-grid grid-cols-3 gap-3
+grid gap-2 
+md:grid-cols-2 md:gap-2
+lg:grid-cols-2 lg:gap-2
+xl:grid-cols-3
+xxl:grid-cols-[repeat(auto-fill,minmax(20rem,1fr))] xxl:gap-2
 mb-4
 `;
 
 // grid-cols-[repeat(auto-fill,minmax(20rem,1fr))]  sm:gap-7 md:gap-7 lg:gap-7
 
 const SkillBox = tw.div`
-w-SkillBoxW h-SkillBoxH border-2 rounded-md border-gray-300 border-solid 
+md:w-SkillBoxW2 md:h-auto
+lg:w-SkillBoxW1 lg:h-SkillBoxH1
+xl:w-SkillBoxW2 xl:h-auto
+xxl:w-[20rem]
+border-2 rounded-md border-gray-300 border-solid 
 hover:border-Main hover:bg-gray-100 p-6
 `;
 
@@ -100,6 +108,4 @@ const SkillTitle = tw.div`
 font-bold text-xl text-Main
 `;
 
-const SkillContentBox = tw.ul`
-mt-3
-`;
+const SkillContentBox = tw.ul`mt-3`;
