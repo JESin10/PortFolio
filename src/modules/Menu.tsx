@@ -32,7 +32,7 @@ export default function Navbar() {
           <PageTitle>EunJin's</PageTitle>
         </a>
         {/* responsive */}
-        <div className="flex md:order-2">
+        <div className="flex sm:order-2">
           <MainButton
             id="triggerEl"
             data-collapse-toggle="navbar-sticky"
@@ -55,7 +55,7 @@ export default function Navbar() {
             </svg>
           </MainButton>
         </div>
-        <div className="rounded-md w-full md:block md:w-auto flex justify-end" id="navbar-sticky">
+        <div className="rounded-md w-full sm:block sm:w-auto flex justify-end" id="navbar-sticky">
           <MenuContainer>
             <li>
               <MenuTag
@@ -107,27 +107,28 @@ max-w-[70rem] inline-flex flex-wrap items-center justify-between mx-auto
 
 const PageTitle = tw.span`
 self-center text-xl font-semibold whitespace-nowrap
-md:text-3xl hover:text-Hightlight ml-5
+sm:text-3xl hover:text-Hightlight ml-5
 `;
 
 const MenuContainer = tw.ul`
-flex flex-col p-4  
-md:flex-row md:space-x-8 md:mt-0 md:text-sm md:ml-[40%] md:font-medium md:border-0
+flex flex-col p-4
+sm:flex-row sm:space-x-8 sm:mt-0 sm:text-sm sm:ml-[40%] sm:font-medium sm:border-0
 `;
 
 const MenuTag = tw.a`
 block cursor-pointer  
+md:w-24 sm:w-fit p-1
 py-2 px-auto border-solid border-Nomal border-b-2 outline-none
-md:text-white md:bg-transparent
+sm:text-white sm:bg-transparent
 text-lg font-bold bg-white
-text-Main w-24
-md:hover:bg-transparent md:hover:text-Hightlight md:p-0 
+text-Main 
+sm:hover:bg-transparent sm:hover:text-Hightlight sm:p-0 
 `;
 
 const MainButton = tw.button`
-inline-flex items-center p-2 
+inline-flex items-center p-2
 text-sm text-Nomal
-rounded-lg md:hidden 
+rounded-lg sm:hidden 
 hover:bg-gray-100 hover:text-Main 
 focus:outline-none focus:ring-2 focus:ring-gray-200
 `;

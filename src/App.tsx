@@ -25,7 +25,7 @@ function App() {
 export default App;
 
 const ContentContainer = tw.div`
-space-y-10 mx-auto mt-TabH w-full
+space-y-10 mt-TabH w-full
 `;
 
 const PageContainer = tw.div`

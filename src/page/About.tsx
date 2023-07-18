@@ -5,7 +5,7 @@ import tw from "tailwind-styled-components";
 export default function About() {
   return (
     <AboutMain>
-      <Title className="Title">Skill</Title>
+      <Title className="Title">About</Title>
       <FullConatiner className="About" id="about">
         <ProfileImg src={loadImg.Profile} alt="ProfilePic" />
         <div className="IntroduceConatiner">
@@ -91,11 +91,11 @@ border-solid border-b-4 border-Main
 `;
 
 const AboutMain = tw.div`
-w-3/4 h-auto mx-auto my-5 p-10
+w-3/4 h-auto mx-auto p-10
 `;
 
 const FullConatiner = tw.div`
-w-full h-auto flex gap-5
+w-full h-auto flex gap-5 
 `;
 
 const ProfileImg = tw.img`

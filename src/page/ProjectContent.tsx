@@ -9,7 +9,7 @@ export default function ProjectContent() {
       <Title className="Title">Project</Title>
       <CategoryTitle className="title my-2"># 개인프로젝트 </CategoryTitle>
       <Project
-        img={JSON.stringify([loadImg.PF1, loadImg.PF2, loadImg.PF3])}
+        img={JSON.stringify([loadImg.PF1, loadImg.PF2, loadImg.PF3, loadImg.PF4])}
         title="개인포트폴리오 사이트"
         date="2023.07.09 - 2023.07.16"
         desc="개인 포트폴리오사이트입니다."
@@ -73,7 +73,7 @@ export default function ProjectContent() {
 }
 
 const ProjectPage = tw.div`
-w-3/4 h-auto p-10 mx-auto 
+w-3/4 h-auto px-10 mx-auto 
 `;
 const Em = tw.span`
   font-bold text-blue-700
