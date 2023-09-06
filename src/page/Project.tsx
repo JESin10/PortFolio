@@ -100,12 +100,12 @@ export default function Project({
       <br />
       <div className="Container">
         <Title className="descTitle">FE Skill</Title>
-        <span className="descContent">{frontend}</span>
+        <span className="descContent font-semibold">{frontend}</span>
         <br />
         {backend && (
           <>
             <Title className="descTitle">BE Skill</Title>
-            <span className="descContent mb-3">{backend}</span>
+            <span className="descContent mb-3 font-semibold">{backend}</span>
             <br />
           </>
         )}

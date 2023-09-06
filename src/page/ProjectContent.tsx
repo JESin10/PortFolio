@@ -9,6 +9,50 @@ export default function ProjectContent() {
       <Title className="Title">Project</Title>
       <CategoryTitle className="title my-2"># 개인프로젝트 </CategoryTitle>
       <Project
+        img={JSON.stringify([
+          loadImg.Bucket_P5,
+          loadImg.Bucket_P6,
+          loadImg.Bucket_P1,
+          loadImg.Bucket_P2,
+          loadImg.Bucket_P3,
+          loadImg.Bucket_P4,
+        ])}
+        title="버킷리스트 사이트"
+        date="23.08.30 - 23.09.06"
+        desc="나만의 버킷리스트를 적고, 공유하는 사이트입니다."
+        frontend="React, TypeScript Tailwind, Styled-components"
+        backend="Firebase"
+        repository="https://github.com/JESin10/BucketList"
+        deployment="https://bucketcheckit.vercel.app"
+        posting="https://velog.io/@jin_s/WIL-23.09.06"
+        modalContent={null}
+        feature="버킷리스트작성/삭제, 카테고리별 필터, 전체 리스트 둘러보기, 소셜로그인(구글)"
+      />
+      <DescriptionConatiner>
+        ◻︎ <Em>Firebase를</Em> 사용해 소셜로그인, 일반 로그인을 구현하고 data를 관리하였습니다.
+        <P />
+        ◻︎ <Em>currentUser 여부를 이용</Em>를 이용해 비로그인 사용자의 경우 메인페이지를, 로그인
+        사용자의 경우 자신의 Dashboard 페이지가 노출됩니다.
+        <P />
+        ◻︎ <Em> typescript와 tailwind</Em> 사용에 익숙해지고, backend의 경우 사용성이 높은
+        Firebase를 습득하기 위한 목적으로 구현하였습니다.
+        <P />
+        ◻︎ 다양한 기기에서도 접근성을 높이고자
+        <Em> 반응형을 적용</Em>하였으며, <Em>dark mode에 대한 설정을 추가</Em>
+        하여 사용자의 UX를 높이고자 하였습니다.
+        <P />
+        ◻︎ <Em>Customizing과 유지보수</Em>를 위해 Tailwind를 사용, Styled-components를 함께 사용해{" "}
+        <Em>가독성을 향상</Em>시키고
+        <Em> 재사용성</Em>을 살려 구성하였습니다.
+        <P />
+        {/* ◻︎ 초기렌더링에 많은 정보가 들어오는 페이지이므로 제공하고자하는 정보를
+        <Em> Data 파일로 작성 후, 해당 데이터를 호출</Em>하는 방식으로
+        수정하였습니다. */}
+      </DescriptionConatiner>
+      {/* - - - - - - - - - - - - - */}
+      <hr />
+      <CategoryTitle className="title my-2"># 개인프로젝트 </CategoryTitle>
+      <Project
         img={JSON.stringify([loadImg.PF1, loadImg.PF2, loadImg.PF3, loadImg.PF4])}
         title="개인포트폴리오 사이트"
         date="2023.07.09 - 2023.07.16"

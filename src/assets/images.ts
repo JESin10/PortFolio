@@ -14,4 +14,11 @@ export const loadImg = {
   PF2: "./image/PF2.png",
   PF3: "./image/PF3.png",
   PF4: "./image/PF4.png",
+
+  Bucket_P1: "./image/Bucket_Dashboard_all.png",
+  Bucket_P2: "./image/Bucket_Dashboard_tr.png",
+  Bucket_P3: "./image/Bucket_Explore_fun.png",
+  Bucket_P4: "./image/Bucket_Explore_tr.png",
+  Bucket_P5: "./image/Bucket_Main.png",
+  Bucket_P6: "./image/Bucket_Main_2.png",
 };
