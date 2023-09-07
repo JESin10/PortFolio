@@ -4,19 +4,19 @@ module.exports = {
   // main color setting 가능
   theme: {
     screens: {
-      sm: "640px", // => @media (min-width: 390px)
-      md: "870px", // => @media (min-width: 640px)
-      lg: "1024px", // => @media (min-width: 1024px)
-      xl: "1280px", // => @media (min-width: 1280px)
-      xxl: "1450px", // => @media (min-width: 1280px)
+      sm: { max: "640px" }, // => @media (min-width: 390px)
+      md: { max: "870px" }, // => @media (min-width: 640px)
+      lg: { max: "1024px" }, // => @media (min-width: 1024px)
+      xl: { max: "1280px" }, // => @media (min-width: 1280px)
+      xxl: { min: "1281px" }, // => @media (min-width: 1280px)
     },
     extend: {
       colors: {
         Main: "#003366",
         Sub1: "#4C7093",
-        Nomal: "#d9d9d9",
-        NomalD: "#B8B8B8",
-        Hightlight: "#F5F085",
+        Gray_Light: "#d9d9d9",
+        Gray_Basic: "#B8B8B8",
+        Highlight: "#F5F085",
       },
       spacing: {
         SkillBoxW1: "350px",

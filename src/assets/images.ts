@@ -3,7 +3,10 @@ export const loadImg = {
   PP2: "./image/PPmobile.png",
   PP3: "./image/PPcategory.png",
   PP4: "./image/PPerror.png",
-  Profile: "./image/profile.png",
+
+  Profile: "./image/profile_character.svg",
+  Favicon: "./image/favicon.svg",
+
   Blog: "./image/velog.svg",
   Resume: "./image/document.svg",
   Email: "./image/Email.svg",

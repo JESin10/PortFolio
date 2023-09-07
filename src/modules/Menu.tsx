@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { Collapse } from "flowbite";
 import tw from "tailwind-styled-components";
+import { loadImg } from "../assets/images";
 
 export default function Navbar() {
   const ProtFolioSite = "https://portfolio-topaz-phi-92.vercel.app/";
@@ -12,8 +13,12 @@ export default function Navbar() {
 
   useEffect(() => {
     // navbar 기능
-    const targetEl: HTMLElement = document.getElementById("targetEl") as HTMLElement;
-    const triggerEl: HTMLElement = document.getElementById("triggerEl") as HTMLElement;
+    const targetEl: HTMLElement = document.getElementById(
+      "targetEl"
+    ) as HTMLElement;
+    const triggerEl: HTMLElement = document.getElementById(
+      "triggerEl"
+    ) as HTMLElement;
 
     if (targetEl && triggerEl) {
       const collapse = new Collapse(targetEl, triggerEl);
@@ -26,10 +31,17 @@ export default function Navbar() {
   }, []);
 
   return (
-    <Nav className="menunav">
+    <Nav className="MenuNav">
       <NavContainer className="container">
         <a href={ProtFolioSite} className="flex items-center">
-          <PageTitle>EunJin's</PageTitle>
+          <PageTitle>
+            <img
+              className="inline-block w-10 mx-2"
+              src={loadImg.Favicon}
+              alt="icon"
+            />
+            <p className="sm:hidden">EunJin's</p>
+          </PageTitle>
         </a>
         {/* responsive */}
         <div className="flex sm:order-2">
@@ -55,12 +67,17 @@ export default function Navbar() {
             </svg>
           </MainButton>
         </div>
-        <div className="rounded-md w-full sm:block sm:w-auto flex justify-end" id="navbar-sticky">
+        <div
+          className="bg-yellow-400 rounded-md w-fit sm:block flex justify-end"
+          id="navbar-sticky"
+        >
           <MenuContainer>
             <li>
               <MenuTag
                 aria-current="page"
-                onClick={() => aboutComponent?.scrollIntoView({ behavior: "smooth" })}
+                onClick={() =>
+                  aboutComponent?.scrollIntoView({ behavior: "smooth" })
+                }
               >
                 About
               </MenuTag>
@@ -68,13 +85,19 @@ export default function Navbar() {
             <li>
               <MenuTag
                 aria-current="page"
-                onClick={() => projectComponent?.scrollIntoView({ behavior: "smooth" })}
+                onClick={() =>
+                  projectComponent?.scrollIntoView({ behavior: "smooth" })
+                }
               >
                 Project
               </MenuTag>
             </li>
             <li>
-              <MenuTag onClick={() => skillComponent?.scrollIntoView({ behavior: "smooth" })}>
+              <MenuTag
+                onClick={() =>
+                  skillComponent?.scrollIntoView({ behavior: "smooth" })
+                }
+              >
                 Skill
               </MenuTag>
             </li>
@@ -95,7 +118,7 @@ export default function Navbar() {
 }
 
 const Nav = tw.nav`
-w-full h-TabH bg-Main font-bold text-white text-3xl
+w-screen h-TabH bg-Main font-bold text-white text-3xl
 text-center border-b border-gray-200
 px-2 py-2.5 fixed z-10
 `;
@@ -105,9 +128,10 @@ w-full h-auto my-5
 max-w-[70rem] inline-flex flex-wrap items-center justify-between mx-auto
 `;
 
-const PageTitle = tw.span`
+const PageTitle = tw.div`
 self-center text-xl font-semibold whitespace-nowrap
-sm:text-3xl hover:text-Hightlight ml-5
+sm:text-3xl hover:text-Highlight ml-5
+flex
 `;
 
 const MenuContainer = tw.ul`
@@ -118,16 +142,16 @@ sm:flex-row sm:space-x-8 sm:mt-0 sm:text-sm sm:ml-[40%] sm:font-medium sm:border
 const MenuTag = tw.a`
 block cursor-pointer  
 md:w-24 sm:w-fit p-1
-py-2 px-auto border-solid border-Nomal border-b-2 outline-none
+py-2 px-auto border-solid border-Gray_Light border-b-2 outline-none
 sm:text-white sm:bg-transparent
 text-lg font-bold bg-white
 text-Main 
-sm:hover:bg-transparent sm:hover:text-Hightlight sm:p-0 
+sm:hover:bg-transparent sm:hover:text-Highlight sm:p-0 
 `;
 
 const MainButton = tw.button`
 inline-flex items-center p-2
-text-sm text-Nomal
+text-sm text-Gray_Light
 rounded-lg sm:hidden 
 hover:bg-gray-100 hover:text-Main 
 focus:outline-none focus:ring-2 focus:ring-gray-200
