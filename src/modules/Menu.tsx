@@ -2,10 +2,12 @@ import React, { useEffect } from "react";
 import { Collapse } from "flowbite";
 import tw from "tailwind-styled-components";
 import { loadImg } from "../assets/images";
+import { BsList } from "react-icons/bs";
 
 export default function Navbar() {
   const ProtFolioSite = "https://portfolio-topaz-phi-92.vercel.app/";
 
+  let PageTop: HTMLElement;
   let aboutComponent: HTMLElement;
   let projectComponent: HTMLElement;
   let skillComponent: HTMLElement;
@@ -24,6 +26,7 @@ export default function Navbar() {
       const collapse = new Collapse(targetEl, triggerEl);
     }
     // 선언한 변수에 엘리먼트 할당
+    PageTop = document.getElementById("")!;
     aboutComponent = document.getElementById("about")!;
     projectComponent = document.getElementById("project")!;
     skillComponent = document.getElementById("skill")!;
@@ -33,40 +36,28 @@ export default function Navbar() {
   return (
     <Nav className="MenuNav">
       <NavContainer className="container">
-        <a href={ProtFolioSite} className="flex items-center">
-          <PageTitle>
-            <img
-              className="inline-block w-10 mx-2"
-              src={loadImg.Favicon}
-              alt="icon"
-            />
-            <p className="sm:hidden">EunJin's</p>
-          </PageTitle>
-        </a>
-        {/* responsive */}
-        <div className="flex sm:order-2">
-          <MainButton
-            id="triggerEl"
-            data-collapse-toggle="navbar-sticky"
-            type="button"
-            aria-controls="navbar-sticky"
-            aria-expanded="false"
-          >
-            <svg
-              className="w-6 h-6"
-              aria-hidden="true"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fillRule="evenodd"
-                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                clipRule="evenodd"
-              ></path>
-            </svg>
-          </MainButton>
-        </div>
+        {/* <a href={ProtFolioSite} className="flex items-center"> */}
+        <PageTitle
+          onClick={() => PageTop?.scrollIntoView({ behavior: "smooth" })}
+        >
+          <img
+            className="inline-block w-10 mx-2"
+            src={loadImg.Favicon}
+            alt="icon"
+          />
+          <p className="sm:hidden">EunJin's</p>
+        </PageTitle>
+        {/* </a> */}
+        {/* <MainButton
+          id="triggerEl"
+          data-collapse-toggle="navbar-sticky"
+          type="button"
+          aria-controls="navbar-sticky"
+          aria-expanded="false"
+        > */}
+        <MainButton>
+          <BsList className="font-extrabold text-3xl" />
+        </MainButton>
         <div
           className="bg-yellow-400 rounded-md w-fit sm:block flex justify-end"
           id="navbar-sticky"
@@ -101,15 +92,6 @@ export default function Navbar() {
                 Skill
               </MenuTag>
             </li>
-            {/* <li>
-              <MenuTag
-                onClick={() =>
-                  educationComponent?.scrollIntoView({ behavior: "smooth" })
-                }
-              >
-                Education
-              </MenuTag>
-            </li> */}
           </MenuContainer>
         </div>
       </NavContainer>
@@ -120,18 +102,19 @@ export default function Navbar() {
 const Nav = tw.nav`
 w-screen h-TabH bg-Main font-bold text-white text-3xl
 text-center border-b border-gray-200
-px-2 py-2.5 fixed z-10
+fixed z-10
 `;
 
 const NavContainer = tw.div`
-w-full h-auto my-5
-max-w-[70rem] inline-flex flex-wrap items-center justify-between mx-auto
+w-full h-fit py-2
+inline-flex flex-wrap items-center justify-between mx-auto
+border-red-500 border-2 border-solid
 `;
 
 const PageTitle = tw.div`
 self-center text-xl font-semibold whitespace-nowrap
 sm:text-3xl hover:text-Highlight ml-5
-flex
+flex 
 `;
 
 const MenuContainer = tw.ul`
@@ -155,4 +138,5 @@ text-sm text-Gray_Light
 rounded-lg sm:hidden 
 hover:bg-gray-100 hover:text-Main 
 focus:outline-none focus:ring-2 focus:ring-gray-200
+sticky
 `;

@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { loadImg } from "../assets/images";
 import tw from "tailwind-styled-components";
 
 export default function About() {
   return (
-    <AboutMain>
+    <AboutMain id="about">
       <Title className="Title">About</Title>
-      <FullContainer className="About" id="about">
+      <FullContainer className="About">
         <ProfileImg src={loadImg.Profile} alt="ProfilePic" />
         <div className="IntroduceContainer">
           <InfoContainer className="Introduce">

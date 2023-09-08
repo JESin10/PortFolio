@@ -81,7 +81,7 @@ border-solid border-b-4 border-Main
 
 const SubTitle = tw.div`
 w-fit h-auto p-3 rounded-2xl my-2
-bg-Main text-Hightlight font-bold
+bg-Main text-Highlight font-bold
 `;
 
 const SkillWrapper = tw.div`

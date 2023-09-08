@@ -17,6 +17,8 @@ module.exports = {
         Gray_Light: "#d9d9d9",
         Gray_Basic: "#B8B8B8",
         Highlight: "#F5F085",
+        Yellow_Light: "rgb(223, 218, 90)",
+        Red_Bright: "rgb(206, 84, 83)",
       },
       spacing: {
         SkillBoxW1: "350px",
