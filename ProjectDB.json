@@ -1,0 +1,49 @@
+{
+  "Projects": [
+    {
+      "id": 1,
+      "title": "버킷리스트 사이트",
+      "date": "23.08.30 - 23.09.06",
+      "link": {
+        "github": "https://github.com/JESin10/BucketList",
+        "blog": "https://velog.io/@jin_s/WIL-23.09.06",
+        "depo": "https://bucketcheckit.vercel.app/"
+      },
+      "summary": "어쩌구저쩌구",
+      "img": [
+        "../image/Bucket_Main.png",
+        "../image/Bucket_Main2.png",
+        "../image/Bucket_Explore.png"
+      ],
+      "skill": {
+        "fe_skill": "React, TypeScript Tailwind, Styled-components",
+        "be_skill": "Firebase"
+      },
+      "desc": [
+        "나만의 버킷리스트를 적고, 공유하는 사이트입니다.",
+        "◻︎ Firebase를 사용해 소셜로그인, 일반 로그인을 구현하고 data를 관리하였습니다.",
+        "◻︎ currentUser 여부를 이용를 이용해 비로그인 사용자의 경우 메인페이지를, 로그인 사용자의 경우 자신의 Dashboard 페이지가 노출됩니다.",
+        "◻︎ typescript와 tailwind 사용에 익숙해지고, backend의 경우 사용성이 높은 Firebase를 습득하기 위한 목적으로 구현하였습니다.",
+        "◻︎ 다양한 기기에서도 접근성을 높이고자 반응형을 적용하였으며, dark mode에 대한 설정을 추가하여 사용자의 UX를 높이고자 하였습니다.",
+        "◻︎ Customizing과 유지보수를 위해 Tailwind를 사용, Styled-components를 함께 사용해 가독성을 향상시키고 재사용성을 살려 구성하였습니다."
+      ]
+    },
+    {
+      "id": 2,
+      "title": "플젝1",
+      "date": "23.09.01 - 23.09.10",
+      "link": {
+        "github": "link1",
+        "blog": "link2",
+        "depo": "link3"
+      },
+      "summary": "어쩌구저쩌구",
+      "img": ["1", "2", "3"],
+      "skill": {
+        "fe_skill": "aa",
+        "bg_skill": "bb"
+      },
+      "desc": ["1", "2", ""]
+    }
+  ]
+}
