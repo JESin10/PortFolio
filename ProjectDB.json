@@ -11,9 +11,12 @@
       },
       "summary": "버킷리스트작성/삭제, 카테고리별 필터, 전체 리스트 둘러보기, 소셜로그인(구글)",
       "img": [
-        "../image/Bucket_Main.png",
-        "../image/Bucket_Main2.png",
-        "../image/Bucket_Explore.png"
+        "../image/BucketList/Bucket_Main.png",
+        "../image/BucketList/Bucket_Main_2.png",
+        "../image/BucketList/Bucket_Dashboard_all.png",
+        "../image/BucketList/Bucket_Dashboard_tr.png",
+        "../image/BucketList/Bucket_Explore_tr.png",
+        "../image/BucketList/Bucket_Explore_fun.png"
       ],
       "skill": {
         "fe_skill": "React, TypeScript Tailwind, Styled-components",
@@ -39,14 +42,14 @@
       },
       "summary": "개인정보제공, 프로젝트 내역, 스킬",
       "img": [
-        "../image/PF1.png",
-        "../image/PF2.png",
-        "../image/PF3.png",
-        "../image/PF4.png"
+        "../image/Portfolio/PF1.png",
+        "../image/Portfolio/PF2.png",
+        "../image/Portfolio/PF3.png",
+        "../image/Portfolio/PF4.png"
       ],
       "skill": {
         "fe_skill": "React, TypeScript Tailwind, Styled-components",
-        "bg_skill": null
+        "be_skill": null
       },
       "desc": [
         "개인 포트폴리오사이트입니다.",
@@ -57,20 +60,31 @@
     },
     {
       "id": 3,
-      "title": "개인포트폴리오 사이트",
-      "date": "2023.07.09 - 2023.07.16",
+      "title": "PetPlace",
+      "date": "2023.03.10 - 2023.04.20",
       "link": {
-        "github": "link1",
-        "blog": "link2",
-        "depo": "link3"
+        "github": "https://github.com/TeamPetPlace/FE",
+        "blog": "https://velog.io/@jin_s/WIL-23.04.21",
+        "depo": "https://fe-fawn.vercel.app/"
       },
-      "summary": "어쩌구저쩌구",
-      "img": ["1", "2", "3"],
+      "summary": "위치정보제공, 키워드검색, 근거리순/후기순/인기순 정렬, 사업체등록/수정/삭제, 댓글작성/수정/삭제, 댓글알림",
+      "img": [
+        "../image/PetPlace/PP_main.png",
+        "../image/PetPlace/PP_category.png",
+        "../image/PetPlace/PP_error.png",
+        "../image/PetPlace/PP_mobile.png"
+      ],
       "skill": {
-        "fe_skill": "aa",
-        "bg_skill": "bb"
+        "fe_skill": "React, JavaScript, React-query, SSE, Axois, Styled-components, js/react-cookie, Skeleton",
+        "be_skill": "Java, SpringBoot, SpringSecurity, MySQL, EC2, AS3, Linux, Ubuntu"
       },
-      "desc": ["1", "2", ""]
+      "desc": [
+        "유저는 검색, 필터링하여 정보를 얻고 사업자는 반려동물에 관한 업체(병원,미용,카페)를 등록하여 관리하는 웹페이지 (위치기반정보제공 서비스)",
+        "◻︎ 유저관리의 경우 소셜로그인은 물론, 보안을 위해 JWT Token을 기반으로 유저를 관리 하였습니다.",
+        "◻︎ 위치기반 서비스임에 중점을 두고, kakaoMap을 사용해 위치정보를 불러온 후, 직선거리 계산을 이용해 근거리순을 제공하였습니다.",
+        "◻︎ 사업자와 유저의 소통을 위해 단방향 통신인 SSE를 활용해 실시간 알림기능을 제공하였습니다.",
+        "◻︎ 웹 사이트 성능 최적화를 통해 Lighthouse Perfomance점수를 73점에서 97점으로, Accessability 점수를 68점에서 87점으로 향상시켰습니다. 또한 React.lazy와 Suspense를 활용해 초기 렌더링 속도를 28.5% 감소 시켰습니다.(0.7s → 0.5s)"
+      ]
     }
   ]
 }
