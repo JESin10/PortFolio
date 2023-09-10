@@ -18,7 +18,7 @@ Deployment : Vercel
 
 #### 📌 서비스 예시
 
-<details><summary> ◼︎ Desktop Version </summary>
+<details><summary> Desktop Version </summary>
 
 <img width="40%" alt="Portfolio_about" src="https://github.com/JESin10/PortFolio/assets/119720123/ad3197d3-2a24-4a3f-a4b5-3b891645f8eb">
 <img width="40%" alt="Portfolio_project" src="https://github.com/JESin10/PortFolio/assets/119720123/cb1c9c4a-4ac1-46b9-a0d6-a4f469e6c418">
@@ -26,7 +26,7 @@ Deployment : Vercel
 
 </details>
 
-<details><summary> ◼︎ Mobile Version </summary>
+<details><summary> Mobile Version </summary>
 
 <img width="25%" alt="Portfolio_mobile_about" src="https://github.com/JESin10/PortFolio/assets/119720123/f2a47790-6615-4e25-92d8-adc4ad248f3b">
 <img width="25%" alt="Portfolio_mobile_project" src="https://github.com/JESin10/PortFolio/assets/119720123/5721ad5f-3c08-4995-a2cb-d729e57375b5">
@@ -37,28 +37,6 @@ Deployment : Vercel
 </details>
 
 ## 📌 서비스 구현 상세
-
-<!-- <details><summary> ◼︎ 성능 최적화 (with LightHouse) </summary>
-
-성능 최적화를 위해 ~~ 하였습니다.
-
-그 결과 00점의 ~~가 00점으로, 00점의 ~~가 00점으로 상승하는 결과를 보일 수 있었습니다.
-
-또한 image를 적절한 확장자로 변경하여 초기 렌더링 속도를 0초에서 0초로 감소 시킬 수 있었습니다.
-
-#### LightHouse 결과 이미지
-
-<img width="40%" alt="성능 개선 전" src=" "> <img width="40%" alt="성능 개선 후" src=" ">
-
-</details>
-
-<details><summary> ◼︎ 반응형 </summary>
-
-접근성이 좋은 UX를 위해 반응형 웹사이트로 구현하였습니다.
-
-화면의 크기에 따라 다른 스타일을 부여할 수 있도록 tailwind 내의 sm, md, lg 속성을 사용하였습니다.
-
-모바일, 웹은 물론 다양한 기기에 맞게 반응형으로 작용되는 사이트를 구현할 수 있었습니다. -->
 
 ✅ UX를 고려해 디자인한 UI
 
@@ -74,7 +52,13 @@ Deployment : Vercel
 
 다만, 가독성과 컴포넌트 단위의 장점을 살리기위하여 styled-component를 함께 결합한 tailwind-styled-component를 사용했습니다.
 
-또한 다양한 기기에서 접근성을 높여 UX를 높이고자 반응형을 추가하였습니다.
+✅ 반응형
+
+접근성이 좋은 UX를 위해 반응형 웹사이트로 구현하였습니다.
+
+화면의 크기에 따라 다른 스타일을 부여할 수 있도록 지정한 screen, color 속성을 사용하였습니다.
+
+모바일, 웹은 물론 다양한 기기에 맞게 반응형으로 작용되는 사이트를 구현할 수 있었습니다.
 
 ✅ Vercel를 통한 배포
 
