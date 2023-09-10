@@ -24,7 +24,7 @@
         "be_skill": "Firebase"
       },
       "desc": [
-        { "content": "나만의 버킷리스트를 적고, 공유하는 사이트입니다." },
+        { "content": "나의 버킷리스트를 적고, 공유하는 사이트입니다." },
         { "content": "◻︎ Firebase를 사용해 소셜로그인, 일반 로그인을 구현하고 data를 관리하였습니다." },
         { "content": "◻︎ currentUser 여부를 이용를 이용해 비로그인 사용자의 경우 메인페이지를, 로그인 사용자의 경우 자신의 Dashboard 페이지가 노출됩니다." },
         { "content": "◻︎ typescript와 tailwind 사용에 익숙해지고, backend의 경우 사용성이 높은 Firebase를 습득하기 위한 목적으로 구현하였습니다." },
