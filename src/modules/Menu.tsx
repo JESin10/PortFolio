@@ -1,32 +1,34 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Collapse } from "flowbite";
 import tw from "tailwind-styled-components";
 import { loadImg } from "../assets/images";
 import { BsList } from "react-icons/bs";
 
 export default function Navbar() {
-  const ProtFolioSite = "https://portfolio-topaz-phi-92.vercel.app/";
-
-  let PageTop: HTMLElement;
   let aboutComponent: HTMLElement;
   let projectComponent: HTMLElement;
   let skillComponent: HTMLElement;
   // let educationComponent: HTMLElement;
 
+  const [isopen, setIsOpen] = useState<boolean>(false);
+
+  const PageReloadHandler = () => {
+    window.location.reload();
+  };
+
+  const MenuOpenHandler = () => {
+    setIsOpen(!isopen);
+  };
+
   useEffect(() => {
     // navbar 기능
-    const targetEl: HTMLElement = document.getElementById(
-      "targetEl"
-    ) as HTMLElement;
-    const triggerEl: HTMLElement = document.getElementById(
-      "triggerEl"
-    ) as HTMLElement;
+    const targetEl: HTMLElement = document.getElementById("targetEl") as HTMLElement;
+    const triggerEl: HTMLElement = document.getElementById("triggerEl") as HTMLElement;
 
     if (targetEl && triggerEl) {
       const collapse = new Collapse(targetEl, triggerEl);
     }
     // 선언한 변수에 엘리먼트 할당
-    PageTop = document.getElementById("")!;
     aboutComponent = document.getElementById("about")!;
     projectComponent = document.getElementById("project")!;
     skillComponent = document.getElementById("skill")!;
@@ -36,18 +38,11 @@ export default function Navbar() {
   return (
     <Nav className="MenuNav">
       <NavContainer className="container">
-        {/* <a href={ProtFolioSite} className="flex items-center"> */}
-        <PageTitle
-          onClick={() => PageTop?.scrollIntoView({ behavior: "smooth" })}
-        >
-          <img
-            className="inline-block w-10 mx-2"
-            src={loadImg.Favicon}
-            alt="icon"
-          />
-          <p className="sm:hidden">EunJin's</p>
+        <PageTitle onClick={() => PageReloadHandler()}>
+          <img className="w-fit h-16 mx-2 p-2" src={loadImg.Favicon} alt="icon" />
+          <p className="sm:hidden">Jin's Portfolio</p>
+          <p className="mtoxl:hidden stom:visibility">Jin's</p>
         </PageTitle>
-        {/* </a> */}
         {/* <MainButton
           id="triggerEl"
           data-collapse-toggle="navbar-sticky"
@@ -55,66 +50,53 @@ export default function Navbar() {
           aria-controls="navbar-sticky"
           aria-expanded="false"
         > */}
-        <MainButton>
-          <BsList className="font-extrabold text-3xl" />
-        </MainButton>
-        <div
-          className="bg-yellow-400 rounded-md w-fit sm:block flex justify-end"
-          id="navbar-sticky"
-        >
-          <MenuContainer>
-            <li>
-              <MenuTag
-                aria-current="page"
-                onClick={() =>
-                  aboutComponent?.scrollIntoView({ behavior: "smooth" })
-                }
-              >
-                About
-              </MenuTag>
-            </li>
-            <li>
-              <MenuTag
-                aria-current="page"
-                onClick={() =>
-                  projectComponent?.scrollIntoView({ behavior: "smooth" })
-                }
-              >
-                Project
-              </MenuTag>
-            </li>
-            <li>
-              <MenuTag
-                onClick={() =>
-                  skillComponent?.scrollIntoView({ behavior: "smooth" })
-                }
-              >
-                Skill
-              </MenuTag>
-            </li>
-          </MenuContainer>
-        </div>
+        <ul>
+          <MainButton onClick={() => MenuOpenHandler()}>
+            <BsList className="font-extrabold text-3xl" />
+          </MainButton>
+        </ul>
+        <>
+          {isopen ? (
+            <div className="bg-yellow-400 rounded-md w-fit sm:block flex justify-end" id="navbar-sticky">
+              <MenuContainer>
+                <li>
+                  <MenuTag aria-current="page" onClick={() => aboutComponent?.scrollIntoView({ behavior: "smooth" })}>
+                    About
+                  </MenuTag>
+                </li>
+                <li>
+                  <MenuTag aria-current="page" onClick={() => projectComponent?.scrollIntoView({ behavior: "smooth" })}>
+                    Project
+                  </MenuTag>
+                </li>
+                <li>
+                  <MenuTag onClick={() => skillComponent?.scrollIntoView({ behavior: "smooth" })}>Skill</MenuTag>
+                </li>
+              </MenuContainer>
+            </div>
+          ) : null}
+        </>
       </NavContainer>
     </Nav>
   );
 }
 
 const Nav = tw.nav`
-w-screen h-TabH bg-Main font-bold text-white text-3xl
+w-screen h-fit bg-Main font-bold text-white text-3xl
 text-center border-b border-gray-200
-fixed z-10
+z-10 py-4
 `;
 
 const NavContainer = tw.div`
-w-full h-fit py-2
-inline-flex flex-wrap items-center justify-between mx-auto
+w-2/3 md:w-full h-fit
+flex flex-wrap items-center justify-between mx-auto
 border-red-500 border-2 border-solid
 `;
 
 const PageTitle = tw.div`
-self-center text-xl font-semibold whitespace-nowrap
-sm:text-3xl hover:text-Highlight ml-5
-flex 
+text-3xl font-semibold whitespace-nowrap
+flex justify-between cursor-pointer items-center 
+hover:text-Highlight 
 `;
 
 const MenuContainer = tw.ul`

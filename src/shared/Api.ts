@@ -10,7 +10,7 @@ export const instance = axios.create({
 export const getProjectData = async () => {
   try {
     const { data } = await instance.get("");
-    console.log(data);
+    // console.log(data);
     return data;
   } catch (err) {
     console.error(err);

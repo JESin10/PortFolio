@@ -9,6 +9,8 @@ module.exports = {
       lg: { max: "1024px" }, // => @media (min-width: 1024px)
       xl: { max: "1280px" }, // => @media (min-width: 1280px)
       xxl: { min: "1281px" }, // => @media (min-width: 1280px)
+      stom: { min: "350px", max: "640px" },
+      mtoxl: { min: "641px" },
     },
     extend: {
       colors: {
