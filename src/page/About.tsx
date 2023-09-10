@@ -66,13 +66,14 @@ export default function About() {
   );
 }
 
+const AboutMain = tw.div`
+w-full md:w-11/12
+mt-TabH mx-auto px-2
+`;
+
 const Title = tw.div`
 font-bold text-3xl w-fit mb-4 p-2
 border-solid border-b-4 border-Main
-`;
-
-const AboutMain = tw.div`
-w-full md:w-5/6 h-auto mx-auto
 `;
 
 const FullContainer = tw.div`
