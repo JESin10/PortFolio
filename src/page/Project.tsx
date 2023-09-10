@@ -5,30 +5,21 @@ import { loadImg } from "../assets/images";
 import { FaTools } from "react-icons/fa";
 import MyData from "../server/ProjectDB.json";
 
-interface ProjectProps {
-  id: number;
-  projectscale: string;
-  title: string;
-  date: string;
-  link: string;
-  summary: string;
-  img: Array<string>;
-  skill: string;
-  desc: Array<string>;
-}
+// interface ProjectProps {
+//   id: number;
+//   projectscale: string;
+//   title: string;
+//   date: string;
+//   link: string;
+//   summary: string;
+//   img: Array<string>;
+//   skill: string;
+//   desc: Array<string>;
+// }
 
 export default function Project() {
-  const [lists, setLists] = useState<any[]>([]);
   const { Projects } = MyData;
   console.log(Projects);
-
-  // useEffect(() => {
-  //   async function fetchData() {
-  //     const data = await getProjectData();
-  //     setLists(data);
-  //   }
-  //   fetchData();
-  // }, []); // 빈 배열을 두어 처음 마운트될 때만 실행하도록 설정
 
   return (
     <ProjectComponent id="project">

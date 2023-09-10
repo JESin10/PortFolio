@@ -39,7 +39,7 @@ export default function Navbar() {
     <Nav className="MenuNav">
       <NavContainer className="container">
         <PageTitle onClick={() => PageReloadHandler()}>
-          <img className="w-fit h-16 mx-2 p-2" src={loadImg.Favicon} alt="icon" />
+          <img className=" w-[-web-kit-fit] h-16 mx-2 p-2" src={loadImg.Favicon} alt="icon" />
           <p className="sm:hidden">Jin's Portfolio</p>
           <p className="mtoxl:hidden stom:visibility">Jin's</p>
         </PageTitle>

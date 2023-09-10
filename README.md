@@ -2,7 +2,7 @@
 
 23.07.09 - 23.07.18
 
-🦋 포트폴리오 URL : <https://portfolio-topaz-phi-92.vercel.app>
+🦋 포트폴리오 URL : <https://jin-portfolio-drab.vercel.app/>
 
 ## 📌 서비스 소개
 
