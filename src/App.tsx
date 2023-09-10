@@ -4,7 +4,6 @@ import Footer from "./page/Footer";
 import Menu from "./modules/Menu";
 import tw from "tailwind-styled-components";
 import Skills from "./page/Skills";
-import ProjectContent from "./page/ProjectContent";
 import Project from "./page/Project";
 
 function App() {
@@ -15,7 +14,6 @@ function App() {
         <ContentContainer>
           <About />
           <Project />
-          {/* <ProjectContent /> */}
           <Skills />
         </ContentContainer>
       </PageContainer>

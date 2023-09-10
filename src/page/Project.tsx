@@ -2,8 +2,8 @@ import React, { ReactNode, useEffect, useState } from "react";
 import tw from "tailwind-styled-components";
 import Carousel from "../modules/Carousel";
 import { loadImg } from "../assets/images";
-import { FaInfoCircle, FaTools } from "react-icons/fa";
-import { getProjectData } from "../shared/Api";
+import { FaTools } from "react-icons/fa";
+import MyData from "../server/ProjectDB.json";
 
 interface ProjectProps {
   id: number;
@@ -19,20 +19,22 @@ interface ProjectProps {
 
 export default function Project() {
   const [lists, setLists] = useState<any[]>([]);
+  const { Projects } = MyData;
+  console.log(Projects);
 
-  useEffect(() => {
-    async function fetchData() {
-      const data = await getProjectData();
-      setLists(data);
-    }
-    fetchData();
-  }, []); // 빈 배열을 두어 처음 마운트될 때만 실행하도록 설정
+  // useEffect(() => {
+  //   async function fetchData() {
+  //     const data = await getProjectData();
+  //     setLists(data);
+  //   }
+  //   fetchData();
+  // }, []); // 빈 배열을 두어 처음 마운트될 때만 실행하도록 설정
 
   return (
     <ProjectComponent id="project">
       <ComponentTitle className="Title">Project</ComponentTitle>
-      {lists &&
-        lists.map((data, index: number) => (
+      {Projects &&
+        Projects.map((data, index: number) => (
           <div>
             <CategoryTitle key={data.id} className="title my-4">
               # {data.projectscale}
@@ -43,7 +45,7 @@ export default function Project() {
                 <div key={index} className="font-bold text-2xl mt-3 mr-3">
                   {data.title}
                 </div>
-                <div key={data.date.index} className="ProjectDate mt-1 mb-8 sm:mb-5">
+                <div key={data.date} className="ProjectDate mt-1 mb-8 sm:mb-5">
                   {data.date}
                 </div>
                 <div className="sm:flex sm:gap-3 sm:w-fit">
