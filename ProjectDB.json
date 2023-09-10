@@ -43,7 +43,16 @@
         "depo": "https://portfolio-topaz-phi-92.vercel.app"
       },
       "summary": "개인정보제공, 프로젝트 내역, 스킬",
-      "img": ["../image/Portfolio/PF1.png", "../image/Portfolio/PF2.png", "../image/Portfolio/PF3.png", "../image/Portfolio/PF4.png"],
+      "img": [
+        "./image/Portfolio/Portfolio_about.png",
+        "../image/Portfolio/Portfolio_project.png",
+        "../image/Portfolio/Portfolio_skill.png",
+        "../image/Portfolio/Portfolio_mobile_about.png",
+        "../image/Portfolio/Portfolio_mobile_project.png",
+        "../image/Portfolio/Portfolio_mobile_project_2.png",
+        "../image/Portfolio/Portfolio_mobile_skill.png",
+        "../image/Portfolio/Portfolio_mobile_skill2.png"
+      ],
       "skill": {
         "fe_skill": "React, TypeScript Tailwind, Styled-components",
         "be_skill": null
