@@ -1,137 +1,167 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode, useEffect, useState } from "react";
 import tw from "tailwind-styled-components";
 import Carousel from "../modules/Carousel";
 import { loadImg } from "../assets/images";
 import { FaInfoCircle, FaTools } from "react-icons/fa";
+import { getProjectData } from "../shared/Api";
 
 interface ProjectProps {
-  img: string;
+  id: number;
+  projectscale: string;
   title: string;
   date: string;
-  desc: string;
-  frontend: string;
-  backend: string | null;
-  repository: string;
-  deployment: string | null;
-  posting: string | null;
-  children?: ReactNode;
-  modalContent: string | null;
-  feature: string;
+  link: string;
+  summary: string;
+  img: Array<string>;
+  skill: string;
+  desc: Array<string>;
 }
 
-export default function Project({
-  img,
-  title,
-  date,
-  desc,
-  frontend,
-  backend,
-  repository,
-  deployment,
-  posting,
-  children,
-  modalContent,
-  feature,
-}: ProjectProps) {
+export default function Project() {
+  const [lists, setLists] = useState<any[]>([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      const data = await getProjectData();
+      setLists(data);
+    }
+    fetchData();
+  }, []); // 빈 배열을 두어 처음 마운트될 때만 실행하도록 설정
+
   return (
-    <div>
-      <ProjectContainer className="Container">
-        <Carousel>
-          {img &&
-            JSON.parse(img).map((src: string) => (
-              <ProjectImg className="proImg" src={src} alt={src} key={src} />
-            ))}
-        </Carousel>
-        <div className="MainDesc ml-10 my-auto">
-          <div className="font-bold text-2xl mt-3 mr-3">{title}</div>
-          <div className="ProjectDate mb-8">{date}</div>
-          {/* - - - - - - - - - - - - - - */}
-          <div className="repo mb-2">
-            <a href={repository} target="_blank" rel="noreferrer">
-              <div className="flex items-center">
-                <Emphasis>
-                  <PostIcon src={loadImg.Github} alt="Github" />
-                  Github ⏎
-                </Emphasis>
-              </div>
-            </a>
-          </div>
-          {posting && (
-            <>
-              <div className="posting mb-2">
-                <a href={posting} target="_blank" rel="noreferrer">
-                  <div className="flex items-center">
-                    <Emphasis>
-                      <PostIcon src={loadImg.Blog} alt="Velog" />
-                      Blog ⏎
-                    </Emphasis>
+    <ProjectComponent id="project">
+      <ComponentTitle className="Title">Project</ComponentTitle>
+      {lists &&
+        lists.map((data, index: number) => (
+          <div>
+            <CategoryTitle key={data.id} className="title my-4">
+              # {data.projectscale}
+            </CategoryTitle>
+            <ProjectContainer className="Container">
+              <Carousel>{data.img && data.img.map((images: string | undefined, imgageIndex: any) => <ProjectImg key={imgageIndex} className="proImg" src={images} />)}</Carousel>
+              <div className="MainDesc mtoxl:ml-10 my-auto">
+                <div key={index} className="font-bold text-2xl mt-3 mr-3">
+                  {data.title}
+                </div>
+                <div key={data.date.index} className="ProjectDate mt-1 mb-8 sm:mb-5">
+                  {data.date}
+                </div>
+                <div className="sm:flex sm:gap-3 sm:w-fit">
+                  <Linkdiv id="repo">
+                    <a href={data.link.github} target="_blank" rel="noreferrer">
+                      <div className="flex items-center">
+                        <Emphasis>
+                          <PostIcon src={loadImg.Github} alt="Github" />
+                          Github ⏎
+                        </Emphasis>
+                      </div>
+                    </a>
+                  </Linkdiv>
+                  {data.link.blog && (
+                    <>
+                      <Linkdiv id="posting">
+                        <a href={data.link.blog} target="_blank" rel="noreferrer">
+                          <div className="flex items-center">
+                            <Emphasis>
+                              <PostIcon src={loadImg.Blog} alt="Velog" />
+                              Blog ⏎
+                            </Emphasis>
+                          </div>
+                        </a>
+                      </Linkdiv>
+                    </>
+                  )}
+                  {data.link.depo && (
+                    <>
+                      <Linkdiv id="posting">
+                        <a href={data.link.depo} target="_blank" rel="noreferrer">
+                          <div className="flex items-center">
+                            <Emphasis>
+                              <PostIcon src={loadImg.Depo} alt="Depoloyment" />
+                              Depo ⏎
+                            </Emphasis>
+                          </div>
+                        </a>
+                      </Linkdiv>
+                    </>
+                  )}
+                </div>
+                <div className="FeatureContainer inline-flex items-center mb-2">
+                  <FaTools />
+                  <div key={data.id} className="featureConatiner ml-2 w-fit">
+                    {data.summary}
                   </div>
-                </a>
-              </div>
-            </>
-          )}
-          {deployment && (
-            <>
-              <div className="posting mb-2">
-                <a href={deployment} target="_blank" rel="noreferrer">
-                  <div className="flex items-center">
-                    <Emphasis>
-                      <PostIcon src={loadImg.Depo} alt="Depoloyment" />
-                      Depo ⏎
-                    </Emphasis>
+                </div>
+                {/* <div>{children}</div>
+                {modalContent && (
+                  <div className="ModalDesc inline-flex items-center">
+                    <FaInfoCircle />
+                    <div className="modalContainer ml-2">{modalContent}</div>
                   </div>
-                </a>
+                )}*/}
               </div>
-            </>
-          )}
-          <div className="FeatureContainer inline-flex items-center mb-2">
-            <FaTools />
-            <div className="featureConatiner ml-2 w-fit">{feature}</div>
-          </div>
-          <div>{children}</div>
-          {modalContent && (
-            <div className="ModalDesc inline-flex items-center">
-              <FaInfoCircle />
-              <div className="modalContainer ml-2">{modalContent}</div>
+            </ProjectContainer>
+            <div className="Container">
+              <Title className="descTitle">FE Skill</Title>
+              <span className="descContent font-semibold">{data.skill.fe_skill}</span>
+              <br />
+              {data.skill.be_skill && (
+                <>
+                  <Title className="descTitle">BE Skill</Title>
+                  <span className="descContent mb-3 font-semibold">{data.skill.be_skill}</span>
+                  <br />
+                </>
+              )}
+              <Title className="descTitle">Description</Title>
+              <div className="my-2">
+                {data.desc.map((descItem: any, descIndex: number) => (
+                  <div key={descIndex} className="mb-2 text-lg sm:text-sm">
+                    {descItem.content}
+                  </div>
+                ))}
+                <div className="sm:h-2 h-4" id="space" />
+              </div>
             </div>
-          )}
-        </div>
-      </ProjectContainer>
-      <br />
-      <div className="Container">
-        <Title className="descTitle">FE Skill</Title>
-        <span className="descContent font-semibold">{frontend}</span>
-        <br />
-        {backend && (
-          <>
-            <Title className="descTitle">BE Skill</Title>
-            <span className="descContent mb-3 font-semibold">{backend}</span>
-            <br />
-          </>
-        )}
-        <Title className="descTitle">Description</Title>
-        <div className="descContent mb-2">{desc}</div>
-      </div>
-    </div>
+          </div>
+        ))}
+    </ProjectComponent>
   );
 }
+
+const ProjectComponent = tw.div`
+w-full md:w-11/12 mx-auto px-2
+`;
+
+const ComponentTitle = tw.div`
+font-bold text-3xl w-fit mb-4 p-2
+border-solid border-b-4 border-Main
+`;
+
+const CategoryTitle = tw.div`
+font-bold text-2xl bg-Main text-white w-fit p-2 rounded-2xl`;
 
 const Title = tw.div`
 font-bold text-lg mt-3 mr-3 p-1
 bg-Main/80 text-white w-fit
 `;
+
 const Emphasis = tw.div`
 font-bold inline-flex items-center mr-2 text-Main
 `;
 
 const ProjectImg = tw.img`
-md:w-ImgBoxW md:h-ImgBoxH object-contain
-w-auto h-44
+object-contain z-40 items-center
+h-ImgBoxH
+lg:h-[200px] lg:w-[250px]
+md:h-[200px] md:w-[300px]
+sm:h-[100px]
+bg-Gray_Light/50
 `;
-// border-solid border-2 rounded-md border-Nomal
 
 const ProjectContainer = tw.div`
-flex items-start
+flex items-start flex-row
+sm:flex sm:flex-col
 `;
 
 const PostIcon = tw.img`w-4 h-4 mr-2`;
+const Linkdiv = tw.div`mb-2 hover:underline text-lg sm:text-sm`;

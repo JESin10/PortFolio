@@ -63,12 +63,15 @@ const Carousel = ({ children }: CarouselProps) => {
 export default Carousel;
 
 const SliderWrapper = tw.div`
-  w-fit mx-6 my-3 
+mx-6 my-3 
 `;
 // lg:mt-10 lg:ml-7
 
 const StyledSlider = tw(Slider)`
-  mx-auto mb-5 
-  w-56 md:w-80 lg:w-ImgBoxW
+mx-auto mb-5 
+w-ImgBoxW h-ImgBoxH 
+lg:h-[200px] lg:w-[250px]
+md:h-auto md:w-[300px]
+sm:h-[100px] sm:w-[200px]
+items-center
 `;
-//w-[16rem]  sm:w-[30rem] md:w-[30rem] lg:w-[30rem]

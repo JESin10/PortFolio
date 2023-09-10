@@ -3,8 +3,9 @@ import About from "./page/About";
 import Footer from "./page/Footer";
 import Menu from "./modules/Menu";
 import tw from "tailwind-styled-components";
-import Skiils from "./page/Skiils";
+import Skills from "./page/Skills";
 import ProjectContent from "./page/ProjectContent";
+import Project from "./page/Project";
 
 function App() {
   return (
@@ -13,8 +14,9 @@ function App() {
         <Menu />
         <ContentContainer>
           <About />
-          <ProjectContent />
-          <Skiils />
+          <Project />
+          {/* <ProjectContent /> */}
+          <Skills />
         </ContentContainer>
       </PageContainer>
       <Footer />
@@ -25,9 +27,11 @@ function App() {
 export default App;
 
 const ContentContainer = tw.div`
-space-y-10 mt-TabH w-full
+space-y-10 mx-auto h-auto
+md:w-full w-2/3
 `;
 
 const PageContainer = tw.div`
-flex row-auto w-full
+flex row-auto w-screen h-auto flex-col
+
 `;

@@ -18,10 +18,23 @@ Deployment : Vercel
 
 #### 📌 서비스 예시
 
-<img height="350" alt="PF1" src="https://github.com/JESin10/BucketList/assets/119720123/afef9c5b-5c9f-4bbc-9970-d5f4f81cf652">
-<img height="350" alt="PF2" src="https://github.com/JESin10/BucketList/assets/119720123/851f6b76-c569-4dce-b0e0-719409614f58">
-<img height="350" alt="PF3" src="https://github.com/JESin10/BucketList/assets/119720123/5da65dd5-cb86-469c-8f03-5716101a0046">
-<img height="350" alt="PF4" src="https://github.com/JESin10/BucketList/assets/119720123/75341cc9-7b15-4c65-bd11-80e20d9f09a3">
+<details><summary> ◼︎ Desktop Version </summary>
+
+<img width="40%" alt="Portfolio_about" src="https://github.com/JESin10/PortFolio/assets/119720123/ad3197d3-2a24-4a3f-a4b5-3b891645f8eb">
+<img width="40%" alt="Portfolio_project" src="https://github.com/JESin10/PortFolio/assets/119720123/cb1c9c4a-4ac1-46b9-a0d6-a4f469e6c418">
+<img width="40%" alt="Portfolio_skill" src="https://github.com/JESin10/PortFolio/assets/119720123/20387672-80a6-4b33-9ea6-24914d738992">
+
+</details>
+
+<details><summary> ◼︎ Mobile Version </summary>
+
+<img width="25%" alt="Portfolio_mobile_about" src="https://github.com/JESin10/PortFolio/assets/119720123/f2a47790-6615-4e25-92d8-adc4ad248f3b">
+<img width="25%" alt="Portfolio_mobile_project" src="https://github.com/JESin10/PortFolio/assets/119720123/5721ad5f-3c08-4995-a2cb-d729e57375b5">
+<img width="25%" alt="Portfolio_mobile_project_2" src="https://github.com/JESin10/PortFolio/assets/119720123/08ace3e3-035a-4c9c-a8c6-f63b361edbac">
+<img width="25%" alt="Portfolio_mobile_skill" src="https://github.com/JESin10/PortFolio/assets/119720123/04a06934-2232-4ef5-9f93-7feaf9dddd57">
+<img width="25%" alt="Portfolio_mobile_skill2" src="https://github.com/JESin10/PortFolio/assets/119720123/f1775704-d13e-4b71-ba70-095a9765b190">
+
+</details>
 
 ## 📌 서비스 구현 상세
 
@@ -55,20 +68,19 @@ Deployment : Vercel
 
 또한, 스크롤 다운형식이므로 빠른 이동을 위해 상단에 Navigation Bar를 고정시켜 주제별로 이동이 용이하도록 하였습니다.
 
-
 ✅ Tailwind + Styled-component
 
 스타일의 확장성 및 커스터마이징을 위해 기본적으로는 Tailwind를 사용하였습니다.
 
 다만, 가독성과 컴포넌트 단위의 장점을 살리기위하여 styled-component를 함께 결합한 tailwind-styled-component를 사용했습니다.
 
+또한 다양한 기기에서 접근성을 높여 UX를 높이고자 반응형을 추가하였습니다.
 
 ✅ Vercel를 통한 배포
 
 사용이 간편하고 용한 vercel을 이용하여 배포했습니다.
 
 세팅부터 배포까지 진행하며 서비스를 구현하는 전체적인 사이클을 경험할 수 있었습니다.
-
 
 ✅ Typescript
 
