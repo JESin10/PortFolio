@@ -38,7 +38,7 @@ export default function About() {
           </InfoContainer>
           <ContactContainer className="contact">
             <InfomationBtn aria-label="resume-button">
-              <a href="https://jin29.notion.site/JIN-65989559a37b476a87c7da0d0690d840?pvs=4" target="_blank" rel="noreferrer" aria-label="resume-link">
+              <a href="https://jin29.notion.site/jin29/JIN-e060a60d3a7640b19dd872b772714086" target="_blank" rel="noreferrer" aria-label="resume-link">
                 <BtnImg src={loadImg.Resume} alt="Resume" />
               </a>
             </InfomationBtn>
