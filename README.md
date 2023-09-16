@@ -18,7 +18,7 @@ FrontEnd: React, Typescript, TailwindCss
 
 Deployment : Vercel
 
-#### 📌 서비스 예시
+## 📌 서비스 예시
 
 <details><summary> Desktop Version </summary>
 
