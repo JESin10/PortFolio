@@ -4,6 +4,8 @@
 
 🦋 포트폴리오 URL : <https://jin-portfolio-drab.vercel.app/>
 
+📎 회고 URL : <https://velog.io/@jin_s/WIL-23.09.17>
+
 ## 📌 서비스 소개
 
 개인 포트폴리오 용도로 제작된 사이트입니다.

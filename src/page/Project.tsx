@@ -19,7 +19,6 @@ import MyData from "../server/ProjectDB.json";
 
 export default function Project() {
   const { Projects } = MyData;
-  console.log(Projects);
 
   return (
     <ProjectComponent id="project">
