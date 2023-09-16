@@ -2,9 +2,10 @@
 
 23.07.09 - 23.07.18
 
-🦋 포트폴리오 URL : <https://jin-portfolio-drab.vercel.app/>
+🦋 포트폴리오 URL : [Jin's Portfolio](https://jin-portfolio-drab.vercel.app/)
 
-📎 회고 URL : <https://velog.io/@jin_s/WIL-23.09.17>
+📎 회고 URL 
+[1차 배포 후 회고](https://velog.io/@jin_s/WIL-23.07.16) | [2차 수정 후 회고](https://velog.io/@jin_s/WIL-23.09.17)
 
 ## 📌 서비스 소개
 
