@@ -45,27 +45,32 @@ export default function Navbar() {
         </PageTitle>
 
         {/* md~ : Menu */}
-        <div className="sm:hidden">
+        <div className="">
           <div className="rounded-md w-fit sm:block flex justify-end" id="navbar-sticky">
             <MenuContainer id="triggerEl">
               <li>
                 <MenuTag aria-current="page" onClick={() => aboutComponent?.scrollIntoView({ behavior: "smooth" })}>
-                  About
+                  <p className="sm:hidden">About</p>
+                  <MobileTag id="about_menu">👤</MobileTag>
                 </MenuTag>
               </li>
               <li>
                 <MenuTag aria-current="page" onClick={() => projectComponent?.scrollIntoView({ behavior: "smooth" })}>
-                  Project
+                  <p className="sm:hidden">Project</p>
+                  <MobileTag id="project_menu">💻</MobileTag>
                 </MenuTag>
               </li>
               <li>
-                <MenuTag onClick={() => skillComponent?.scrollIntoView({ behavior: "smooth" })}>Skill</MenuTag>
+                <MenuTag onClick={() => skillComponent?.scrollIntoView({ behavior: "smooth" })}>
+                  <p className="sm:hidden">Skill</p>
+                  <MobileTag id="skill_menu">⚙️</MobileTag>
+                </MenuTag>
               </li>
             </MenuContainer>
           </div>
         </div>
         {/* ~sm : Menu */}
-        <div className="sm:visibility mtoxl:hidden">
+        {/* <div className="sm:visibility mtoxl:hidden">
           <MainButton onClick={() => MenuOpenHandler()}>
             <BsList className="font-extrabold text-3xl" />
           </MainButton>
@@ -76,6 +81,7 @@ export default function Navbar() {
                   <li className="w-full hover:bg-Gray_Light/20">
                     <MenuTag aria-current="page" onClick={() => aboutComponent?.scrollIntoView({ behavior: "smooth" })}>
                       About
+                      <p className="sm:visibility mtoxl::hidden">About</p>
                     </MenuTag>
                   </li>
                   <li className="w-full hover:bg-Gray_Light/20">
@@ -90,7 +96,7 @@ export default function Navbar() {
               </div>
             ) : null}
           </>
-        </div>
+        </div> */}
       </NavContainer>
     </Nav>
   );
@@ -115,29 +121,35 @@ hover:text-Highlight
 `;
 
 const MenuContainer = tw.ul`
-flex flex-row space-x-4
-sm:w-full sm:space-x-0
-sm:flex-col sm:my-4 sm:mx-auto 
-items-center 
-sm:h-full
+flex flex-row space-x-4 items-center 
+sm:w-fit sm:space-x-4
+sm:my-2 sm:mx-auto
+sm:h-full 
 `;
 
 const MenuTag = tw.a`
 block cursor-pointer text-lg font-bold
-md:w-24 sm:w-full p-4
-py-2 mx-auto 
+mtoxl:w-24 p-4 py-2 mx-auto 
 text-white hover:text-Highlight bg-transparent
-sm:px-auto sm:py-2
 hover:bg-Gray_Light/40
 border-solid border-Gray_Light border-b-2 outline-none
-sm:hover:bg-transparent
+
+sm:w-12 sm:px-0 sm:py-2
+sm:border-none sm:bg-white/70 sm:rounded-xl
+sm:hover:bg-Highlight
+sm:text-xl 
 `;
 
-const MainButton = tw.button`
-inline-flex items-center p-2
-text-sm text-Gray_Light
-rounded-lg  
-hover:bg-gray-100 hover:text-Main 
-focus:outline-none focus:ring-2 focus:ring-gray-200
-sticky
+const MobileTag = tw.p`
+sm:visibility mtoxl:hidden
+shadow-i
 `;
+
+// const MainButton = tw.button`
+// inline-flex items-center p-2
+// text-sm text-Gray_Light
+// rounded-lg
+// hover:bg-gray-100 hover:text-Main
+// focus:outline-none focus:ring-2 focus:ring-gray-200
+// sticky
+// `;
