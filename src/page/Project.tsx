@@ -17,7 +17,7 @@ export default function Project() {
 
   const ProjectDatafetch = async () => {
     const res = await MyProjectData();
-    console.log(res);
+    // console.log(res);
     setProjectData(res);
     return res;
   };
