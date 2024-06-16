@@ -4,33 +4,46 @@ import Carousel from "../modules/Carousel";
 import { loadImg } from "../assets/images";
 import { FaTools } from "react-icons/fa";
 import MyData from "../server/ProjectDB.json";
-
-// interface ProjectProps {
-//   id: number;
-//   projectscale: string;
-//   title: string;
-//   date: string;
-//   link: string;
-//   summary: string;
-//   img: Array<string>;
-//   skill: string;
-//   desc: Array<string>;
-// }
+import { ProjectProps } from "../assets/interface";
+import { MyProjectData } from "../assets/Rtd";
 
 export default function Project() {
-  const { Projects } = MyData;
+  // const { Projects } = MyData;
+  const [projectData, setProjectData] = useState<ProjectProps[]>([]);
+
+  useEffect(() => {
+    ProjectDatafetch();
+  }, []);
+
+  const ProjectDatafetch = async () => {
+    const res = await MyProjectData();
+    console.log(res);
+    setProjectData(res);
+    return res;
+  };
 
   return (
     <ProjectComponent id="project">
       <ComponentTitle className="Title">Project</ComponentTitle>
-      {Projects &&
-        Projects.map((data, index: number) => (
-          <div>
-            <CategoryTitle key={data.id} className="title my-4">
+      {projectData.length > 0 &&
+        projectData.map((data: ProjectProps, index: number) => (
+          <div key={index}>
+            <CategoryTitle className="title my-4">
               # {data.projectscale}
             </CategoryTitle>
             <ProjectContainer className="Container">
-              <Carousel>{data.img && data.img.map((images: string | undefined, imgageIndex: any) => <ProjectImg key={imgageIndex} className="proImg" src={images} />)}</Carousel>
+              <Carousel>
+                {data.img &&
+                  data.img.map(
+                    (images: string | undefined, imgageIndex: any) => (
+                      <ProjectImg
+                        key={imgageIndex}
+                        className="proImg"
+                        src={images}
+                      />
+                    )
+                  )}
+              </Carousel>
               <div className="MainDesc mtoxl:ml-10 my-auto">
                 <div key={index} className="font-bold text-2xl mt-3 mr-3">
                   {data.title}
@@ -52,7 +65,11 @@ export default function Project() {
                   {data.link.blog && (
                     <>
                       <Linkdiv id="posting">
-                        <a href={data.link.blog} target="_blank" rel="noreferrer">
+                        <a
+                          href={data.link.blog}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
                           <div className="flex items-center">
                             <Emphasis>
                               <PostIcon src={loadImg.Blog} alt="Velog" />
@@ -66,7 +83,11 @@ export default function Project() {
                   {data.link.depo && (
                     <>
                       <Linkdiv id="posting">
-                        <a href={data.link.depo} target="_blank" rel="noreferrer">
+                        <a
+                          href={data.link.depo}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
                           <div className="flex items-center">
                             <Emphasis>
                               <PostIcon src={loadImg.Depo} alt="Depoloyment" />
@@ -95,12 +116,16 @@ export default function Project() {
             </ProjectContainer>
             <div className="Container">
               <Title className="descTitle">FE Skill</Title>
-              <span className="descContent font-semibold">{data.skill.fe_skill}</span>
+              <span className="descContent font-semibold">
+                {data.skill.fe_skill}
+              </span>
               <br />
               {data.skill.be_skill && (
                 <>
                   <Title className="descTitle">BE Skill</Title>
-                  <span className="descContent mb-3 font-semibold">{data.skill.be_skill}</span>
+                  <span className="descContent mb-3 font-semibold">
+                    {data.skill.be_skill}
+                  </span>
                   <br />
                 </>
               )}

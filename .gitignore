@@ -26,4 +26,5 @@ node_modules
 db.json
 .env
 
-#img
+#db
+myPortfolio.json
