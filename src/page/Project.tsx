@@ -1,9 +1,8 @@
-import React, { ReactNode, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import tw from "tailwind-styled-components";
 import Carousel from "../modules/Carousel";
 import { loadImg } from "../assets/images";
 import { FaTools } from "react-icons/fa";
-import MyData from "../server/ProjectDB.json";
 import { ProjectProps } from "../assets/interface";
 import { MyProjectData } from "../assets/Rtd";
 

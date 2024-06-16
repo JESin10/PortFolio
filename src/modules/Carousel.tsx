@@ -1,19 +1,32 @@
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import tw from "tailwind-styled-components";
 import Slider, { CustomArrowProps } from "react-slick";
 import { FaAngleRight, FaAngleLeft } from "react-icons/fa";
 
-const NextArrow = ({ currentSlide, slideCount, ...props }: CustomArrowProps) => (
+const NextArrow = ({
+  currentSlide,
+  slideCount,
+  ...props
+}: CustomArrowProps) => (
   <div {...props}>
     <FaAngleRight className="NextArrow" size="30px" color="black" />
   </div>
 );
 
-const PrevArrow = ({ currentSlide, slideCount, ...props }: CustomArrowProps) => (
+const PrevArrow = ({
+  currentSlide,
+  slideCount,
+  ...props
+}: CustomArrowProps) => (
   <div {...props}>
-    <FaAngleLeft className="PrevArrow" size="30px" color="black" style={{ marginRight: "10px" }} />
+    <FaAngleLeft
+      className="PrevArrow"
+      size="30px"
+      color="black"
+      style={{ marginRight: "10px" }}
+    />
   </div>
 );
 
