@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Collapse } from "flowbite";
 import tw from "tailwind-styled-components";
 import { loadImg } from "../assets/images";
-import { BsList } from "react-icons/bs";
 
 export default function Navbar() {
   let aboutComponent: HTMLElement;
@@ -10,20 +9,18 @@ export default function Navbar() {
   let skillComponent: HTMLElement;
   // let educationComponent: HTMLElement;
 
-  const [isopen, setIsOpen] = useState<boolean>(false);
-
   const PageReloadHandler = () => {
     window.location.reload();
   };
 
-  const MenuOpenHandler = () => {
-    setIsOpen(!isopen);
-  };
-
   useEffect(() => {
     // navbar 기능
-    const targetEl: HTMLElement = document.getElementById("targetEl") as HTMLElement;
-    const triggerEl: HTMLElement = document.getElementById("triggerEl") as HTMLElement;
+    const targetEl: HTMLElement = document.getElementById(
+      "targetEl"
+    ) as HTMLElement;
+    const triggerEl: HTMLElement = document.getElementById(
+      "triggerEl"
+    ) as HTMLElement;
 
     if (targetEl && triggerEl) {
       const collapse = new Collapse(targetEl, triggerEl);
@@ -39,29 +36,50 @@ export default function Navbar() {
     <Nav className="MenuNav">
       <NavContainer className="container">
         <PageTitle onClick={() => PageReloadHandler()}>
-          <img className=" w-[-web-kit-fit] h-16 mx-2 p-2 sm:h-10" src={loadImg.Favicon} alt="icon" />
+          <img
+            className=" w-[-web-kit-fit] h-16 mx-2 p-2 sm:h-10"
+            src={loadImg.Favicon}
+            alt="icon"
+          />
           <p className="sm:hidden">Jin's Portfolio</p>
           <p className="mtoxl:hidden stom:visibility text-2xl">Jin's</p>
         </PageTitle>
 
         {/* md~ : Menu */}
         <div className="">
-          <div className="rounded-md w-fit sm:block flex justify-end" id="navbar-sticky">
+          <div
+            className="rounded-md w-fit sm:block flex justify-end"
+            id="navbar-sticky"
+          >
             <MenuContainer id="triggerEl">
               <li>
-                <MenuTag aria-current="page" onClick={() => aboutComponent?.scrollIntoView({ behavior: "smooth" })}>
+                <MenuTag
+                  aria-current="page"
+                  onClick={() =>
+                    aboutComponent?.scrollIntoView({ behavior: "smooth" })
+                  }
+                >
                   <p className="sm:hidden">About</p>
                   <MobileTag id="about_menu">👤</MobileTag>
                 </MenuTag>
               </li>
               <li>
-                <MenuTag aria-current="page" onClick={() => projectComponent?.scrollIntoView({ behavior: "smooth" })}>
+                <MenuTag
+                  aria-current="page"
+                  onClick={() =>
+                    projectComponent?.scrollIntoView({ behavior: "smooth" })
+                  }
+                >
                   <p className="sm:hidden">Project</p>
                   <MobileTag id="project_menu">💻</MobileTag>
                 </MenuTag>
               </li>
               <li>
-                <MenuTag onClick={() => skillComponent?.scrollIntoView({ behavior: "smooth" })}>
+                <MenuTag
+                  onClick={() =>
+                    skillComponent?.scrollIntoView({ behavior: "smooth" })
+                  }
+                >
                   <p className="sm:hidden">Skill</p>
                   <MobileTag id="skill_menu">⚙️</MobileTag>
                 </MenuTag>
@@ -69,34 +87,6 @@ export default function Navbar() {
             </MenuContainer>
           </div>
         </div>
-        {/* ~sm : Menu */}
-        {/* <div className="sm:visibility mtoxl:hidden">
-          <MainButton onClick={() => MenuOpenHandler()}>
-            <BsList className="font-extrabold text-3xl" />
-          </MainButton>
-          <>
-            {isopen ? (
-              <div className="bg-Main/90 rounded-md w-40 flex flex-col items-center absolute z-99 right-6">
-                <MenuContainer id="triggerEl">
-                  <li className="w-full hover:bg-Gray_Light/20">
-                    <MenuTag aria-current="page" onClick={() => aboutComponent?.scrollIntoView({ behavior: "smooth" })}>
-                      About
-                      <p className="sm:visibility mtoxl::hidden">About</p>
-                    </MenuTag>
-                  </li>
-                  <li className="w-full hover:bg-Gray_Light/20">
-                    <MenuTag aria-current="page" onClick={() => projectComponent?.scrollIntoView({ behavior: "smooth" })}>
-                      Project
-                    </MenuTag>
-                  </li>
-                  <li className="w-full hover:bg-Gray_Light/20">
-                    <MenuTag onClick={() => skillComponent?.scrollIntoView({ behavior: "smooth" })}>Skill</MenuTag>
-                  </li>
-                </MenuContainer>
-              </div>
-            ) : null}
-          </>
-        </div> */}
       </NavContainer>
     </Nav>
   );

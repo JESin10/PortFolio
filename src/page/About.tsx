@@ -1,4 +1,3 @@
-import React, { useEffect } from "react";
 import { loadImg } from "../assets/images";
 import tw from "tailwind-styled-components";
 
@@ -25,37 +24,62 @@ export default function About() {
             </div>
             <div className="DescriptionContainer">
               <div className="DescList my-4">
-                ✔️ 트렌드를 파악하는 개발자로서 <B>새로운 과제를 흥미롭게 받아들이며, 배움에 열려있는</B> 개발자가 되고자 합니다.
+                ✔️ 트렌드를 파악하는 개발자로서{" "}
+                <B>새로운 과제를 흥미롭게 받아들이며, 배움에 열려있는</B>{" "}
+                개발자가 되고자 합니다.
                 <P />
-                ✔️ 혼자 일하지 않습니다. 그렇기 때문에 팀으로 함께 일하는 동료들이 <B>협업하고 싶어하는 사람</B>이 되고자 합니다.
+                ✔️ 혼자 일하지 않습니다. 그렇기 때문에 팀으로 함께 일하는
+                동료들이 <B>협업하고 싶어하는 사람</B>이 되고자 합니다.
                 <P />
-                ✔️ 끊임없이 <B>학습하고</B>, 끊임없이 <B>받아들이며</B>, 끊임없이 <B>노력하겠습니다</B>.
+                ✔️ 끊임없이 <B>학습하고</B>, 끊임없이 <B>받아들이며</B>,
+                끊임없이 <B>노력하겠습니다</B>.
                 <P />
-                ✔️ 다양한 사회경험을 바탕으로 <B>원활한 커뮤니케이션</B>에 자신있습니다. <P />
+                ✔️ 다양한 사회경험을 바탕으로 <B>원활한 커뮤니케이션</B>에
+                자신있습니다. <P />
                 {/* &nbsp; ~~에서 ~~한 경험이 있습니다 <b>강조</b>~~하는 것을 배웠습니다 */}
               </div>
             </div>
           </InfoContainer>
           <ContactContainer className="contact">
             <InfomationBtn aria-label="resume-button">
-              <a href="https://jin29.notion.site/jin29/JIN-e060a60d3a7640b19dd872b772714086" target="_blank" rel="noreferrer" aria-label="resume-link">
+              <a
+                href="https://jin29.notion.site/jin29/JIN-e060a60d3a7640b19dd872b772714086"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="resume-link"
+              >
                 <BtnImg src={loadImg.Resume} alt="Resume" />
               </a>
             </InfomationBtn>
             <InfomationBtn aria-label="email-button">
-              <a href="mailto:shinej1029@gmail.com" target="_blank" rel="noreferrer" aria-label="email-link">
+              <a
+                href="mailto:shinej1029@gmail.com"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="email-link"
+              >
                 {/* <FaEnvelope size="50px" /> */}
                 <BtnImg src={loadImg.Email} alt="Mail" />
               </a>
             </InfomationBtn>
             <InfomationBtn aria-label="github-button">
-              <a href="https://github.com/JESin10" target="_blank" rel="noreferrer" aria-label="github-link">
+              <a
+                href="https://github.com/JESin10"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="github-link"
+              >
                 {/* <FaGithubSquare size="50px" /> */}
                 <BtnImg src={loadImg.Github} alt="Github" />
               </a>
             </InfomationBtn>
             <InfomationBtn aria-label="blog-button">
-              <a href="https://velog.io/@jin_s/" target="_blank" rel="noreferrer" aria-label="blog-link">
+              <a
+                href="https://velog.io/@jin_s/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="blog-link"
+              >
                 <BtnImg src={loadImg.Blog} alt="Velog" />
               </a>
             </InfomationBtn>
