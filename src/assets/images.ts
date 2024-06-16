@@ -13,6 +13,11 @@ export const loadImg = {
   Github: "./image/github.svg",
   Depo: "./image/deployment.svg",
 
+  ArtMate_P1: "./image/ArtMate/ArtMate_Main1.png",
+  ArtMate_P2: "./image/ArtMate/ArtMate_Page1.jpg",
+  ArtMate_P3: "./image/ArtMate/ArtMate_Page2.jpg",
+  ArtMate_B: "./image/ArtMate/ArtMate_Banner.png",
+
   Bucket_P1: "./image/BucketList/Bucket_Dashboard_all.png",
   Bucket_P2: "./image/BucketList/Bucket_Dashboard_tr.png",
   Bucket_P3: "./image/BucketList/Bucket_Explore_fun.png",
