@@ -5,6 +5,7 @@ import { loadImg } from "../assets/images";
 import { FaTools } from "react-icons/fa";
 import { ProjectProps } from "../assets/interface";
 import { MyProjectData } from "../assets/Rtd";
+import HtmlStyle from "../modules/HtmlStyle";
 
 export default function Project() {
   // const { Projects } = MyData;
@@ -26,11 +27,11 @@ export default function Project() {
       <ComponentTitle className="Title">Project</ComponentTitle>
       {projectData.length > 0 &&
         projectData.map((data: ProjectProps, index: number) => (
-          <div key={index}>
+          <ProjectContainer key={index}>
             <CategoryTitle className="title my-4">
               # {data.projectscale}
             </CategoryTitle>
-            <ProjectContainer className="Container">
+            <ProjectsContainer className="Container">
               <Carousel>
                 {data.img &&
                   data.img.map(
@@ -112,7 +113,7 @@ export default function Project() {
                   </div>
                 )}*/}
               </div>
-            </ProjectContainer>
+            </ProjectsContainer>
             <div className="Container">
               <Title className="descTitle">FE Skill</Title>
               <span className="descContent font-semibold">
@@ -132,52 +133,58 @@ export default function Project() {
               <div className="my-2">
                 {data.desc.map((descItem: any, descIndex: number) => (
                   <div key={descIndex} className="mb-2 text-lg sm:text-sm">
-                    {descItem.content}
+                    {HtmlStyle(descItem.content)}
                   </div>
                 ))}
                 <div className="sm:h-2 h-4" id="space" />
               </div>
             </div>
-          </div>
+          </ProjectContainer>
         ))}
     </ProjectComponent>
   );
 }
 
 const ProjectComponent = tw.div`
-w-full md:w-11/12 mx-auto px-2
+  w-full md:w-11/12 mx-auto px-2
 `;
 
 const ComponentTitle = tw.div`
-font-bold text-3xl w-fit mb-4 p-2
-border-solid border-b-4 border-Main
+  font-bold text-3xl w-fit mb-4 p-2
+  border-solid border-b-4 border-primary-Navy
 `;
 
 const CategoryTitle = tw.div`
-font-bold text-2xl bg-Main text-white w-fit p-2 rounded-2xl`;
+  font-bold text-2xl bg-Main text-white w-fit p-2 rounded-2xl`;
 
 const Title = tw.div`
-font-bold text-lg mt-3 mr-3 p-1
-bg-Main/80 text-white w-fit
+  font-bold text-lg mt-3 mr-3 p-1
+  bg-primary-Navy/80 text-white w-fit
 `;
 
 const Emphasis = tw.div`
-font-bold inline-flex items-center mr-2 text-Main
+  font-bold inline-flex items-center mr-2 text-primary-Navy
 `;
 
 const ProjectImg = tw.img`
 object-contain z-40 items-center
-h-ImgBoxH
-lg:h-[200px] lg:w-[250px]
-md:h-[200px] md:w-[300px]
-sm:h-[100px]
-bg-Gray_Light/50
+  h-ImgBoxH
+  lg:h-[200px] lg:w-[250px]
+  md:h-[200px] md:w-[300px]
+  sm:h-[100px]
+  bg-secondary-LightGray/50
 `;
 
-const ProjectContainer = tw.div`
-flex items-start flex-row
-sm:flex sm:flex-col
+const ProjectsContainer = tw.div`
+  flex items-start flex-row
+  sm:flex sm:flex-col
 `;
 
 const PostIcon = tw.img`w-4 h-4 mr-2`;
 const Linkdiv = tw.div`mb-2 hover:underline text-lg sm:text-sm`;
+
+const ProjectContainer = tw.div`
+  rounded-md p-6 border-black border-2 border-solid my-6
+  bg-white
+  hover:shadow-lg
+`;
