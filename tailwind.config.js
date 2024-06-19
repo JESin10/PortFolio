@@ -11,17 +11,23 @@ module.exports = {
       xxl: { min: "1281px" }, // => @media (min-width: 1280px)
       stom: { min: "350px", max: "640px" },
       mtoxl: { min: "641px" },
+      lgtoxl: { min: "1024px" },
     },
     extend: {
       colors: {
-        Main: "#003366",
-        Sub1: "#4C7093",
-        Gray_Light: "#d9d9d9",
-        Gray_Basic: "#B8B8B8",
-        Highlight: "#F5F085",
-        Yellow_Light: "rgb(223, 218, 90)",
-        Red_Bright: "rgb(206, 84, 83)",
+        primary: {
+          Navy: "#003366",
+          Gray: "#B8B8B8",
+          Yellow_Highlight: "#F5F085",
+          Red: "#ce5353",
+        },
+        secondary: {
+          LightNavy: "#4C7093",
+          LightGray: "#d9d9d9",
+          DarkerYellow: "#dfda5a",
+        },
       },
+
       spacing: {
         SkillBoxW1: "350px",
         SkillBoxH1: "170px",

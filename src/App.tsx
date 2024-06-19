@@ -25,11 +25,11 @@ function App() {
 export default App;
 
 const ContentContainer = tw.div`
-space-y-10 mx-auto h-auto
-md:w-full w-2/3
+  space-y-10 mx-auto h-auto
+  md:w-full w-2/3
 `;
 
 const PageContainer = tw.div`
-flex row-auto w-screen h-auto flex-col
-
+  flex row-auto w-screen h-auto flex-col
+  bg-primary-Navy/10
 `;

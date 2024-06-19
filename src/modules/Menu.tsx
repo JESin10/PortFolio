@@ -93,46 +93,45 @@ export default function Navbar() {
 }
 
 const Nav = tw.nav`
-font-bold text-white 
-text-center text-3xl
-w-full h-fit z-50 py-4 fixed
-bg-Main shadow-md shadow-black/40
+  font-bold text-white 
+  text-center text-3xl
+  w-full h-fit z-50 py-4 fixed
+  bg-primary-Navy shadow-md shadow-black/40
 `;
 
 const NavContainer = tw.div`
-w-2/3 md:w-full h-fit
-flex flex-wrap items-center justify-between mx-auto
+  w-2/3 md:w-full h-fit
+  flex flex-wrap items-center justify-between mx-auto
 `;
 
 const PageTitle = tw.div`
-text-3xl font-semibold whitespace-nowrap
-flex justify-between cursor-pointer items-center 
-hover:text-Highlight 
+  text-3xl font-semibold whitespace-nowrap
+  flex justify-between cursor-pointer items-center 
+  hover:text-primary-Yellow_Highlight 
 `;
 
 const MenuContainer = tw.ul`
-flex flex-row space-x-4 items-center 
-sm:w-fit sm:space-x-4
-sm:my-2 sm:mx-auto
-sm:h-full 
+  flex flex-row space-x-4 items-center 
+  sm:w-fit sm:space-x-4
+  sm:my-2 sm:mx-auto sm:h-full 
 `;
 
 const MenuTag = tw.a`
-block cursor-pointer text-lg font-bold
-mtoxl:w-24 p-4 py-2 mx-auto 
-text-white hover:text-Highlight bg-transparent
-hover:bg-Gray_Light/40
-border-solid border-Gray_Light border-b-2 outline-none
+  block cursor-pointer text-lg font-bold
+  mtoxl:w-24 p-4 py-2 mx-auto 
+  text-white hover:text-primary-Yellow_Highlight bg-transparent
+  hover:bg-secondary-LightGray/40
+  border-solid border-Gray_Light border-b-2 outline-none
 
-sm:w-12 sm:px-0 sm:py-2
-sm:border-none sm:bg-white/70 sm:rounded-xl
-sm:hover:bg-Highlight
-sm:text-xl 
+  sm:w-12 sm:px-0 sm:py-2
+  sm:border-none sm:bg-white/70 sm:rounded-xl
+  sm:hover:bg-primary-Yellow_Highlight
+  sm:text-xl 
 `;
 
 const MobileTag = tw.p`
-sm:visibility mtoxl:hidden
-shadow-i
+  sm:visibility mtoxl:hidden
+  shadow-i
 `;
 
 // const MainButton = tw.button`

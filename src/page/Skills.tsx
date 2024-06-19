@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import tw from "tailwind-styled-components";
 import { MySkillData } from "../assets/Rtd";
 import { Skills } from "../assets/interface";
+import HtmlStyle from "../modules/HtmlStyle";
 
 export default function Skiils() {
   const [skillData, setSkillData] = useState<Skills[]>([]);
@@ -28,6 +29,8 @@ export default function Skiils() {
     setTypeCheck({ SkillType: SkillType });
     setButtonActive(SkillId);
   };
+
+  console.log(skillData);
 
   return (
     <Skill className="SkillPage" id="skill">
@@ -62,7 +65,11 @@ export default function Skiils() {
               <SkillTitle className={item.skillType}>{item.skill}</SkillTitle>
               <SkillContentBox>
                 {item.desc.map((list, ListIndex: number) => (
-                  <li key={ListIndex}> ◻︎ {list}</li>
+                  <li className="flex space-x-2" key={ListIndex}>
+                    <p>◻︎</p>
+                    {/* HtmlStyle이 <div>로 return되기 때문에 해당 스타일의 경우 <p>가 아닌 <span>을 사용해 주어야 한다 */}
+                    <span>{HtmlStyle(list)}</span>
+                  </li>
                 ))}
               </SkillContentBox>
             </SkillBox>
@@ -79,14 +86,14 @@ const Skill = tw.div`
 
 const Title = tw.div`
   font-bold text-3xl w-fit mb-4 p-2
-  border-solid border-b-4 border-Main
+  border-solid border-b-4 border-primary-Navy
 `;
 
 const SubTitleBtn = tw.button`
   w-fit h-auto p-3 rounded-2xl my-2
-  font-bold text-Highlight bg-Main
+  font-bold text-primary-Yellow_Highlight bg-primary-Navy
   cursor-pointer
-  hover:border-Main hover:bg-Main/80
+  hover:border-primary-Navy hover:bg-primary-Navy/80
 `;
 
 const SkillWrapper = tw.div`
@@ -99,15 +106,15 @@ const SkillWrapper = tw.div`
 `;
 
 const SkillBox = tw.div`
-  w-full p-6 rounded-md cursor-default
-  border-2 border-gray-300 border-solid 
-  hover:border-Main hover:bg-gray-100 
+  w-full p-6 rounded-md cursor-default bg-white
+  border-2 border-secondary-LightGray border-solid 
+  hover:border-primary-Navy hover:bg-gray-100 
     ${(props: { $active: boolean }) =>
-      props.$active ? "bg-Main/10" : "bg-white"}
+      props.$active ? "border-4 border-primary-Navy" : ""}
 `;
 
 const SkillTitle = tw.div`
-  font-bold text-xl text-Main
+  font-bold text-xl text-primary-Navy
   sm:text-sm 
 `;
 
