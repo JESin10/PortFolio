@@ -102,7 +102,7 @@ const AboutMain = tw.div`
 
 const Title = tw.div`
   font-bold text-3xl w-fit mb-4 p-2
-  border-solid border-b-4 border-Main
+  border-solid border-b-4 border-primary-Navy
 `;
 
 const FullContainer = tw.div`
@@ -141,4 +141,4 @@ const InformationBtn = tw.div`
 `;
 
 const P = tw.p`mb-2`;
-const B = tw.span`font-bold bg-Highlight`;
+const B = tw.span`font-bold bg-primary-Yellow_Highlight`;

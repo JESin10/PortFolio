@@ -67,22 +67,28 @@ const Carousel = ({ children }: CarouselProps) => {
   };
 
   return (
-    <SliderWrapper>
-      <StyledSlider {...settings}>{children}</StyledSlider>
+    <SliderWrapper className="SliderContainer">
+      <StyledSlider {...settings} className="Slider">
+        {children}
+      </StyledSlider>
     </SliderWrapper>
   );
 };
 
 export default Carousel;
 
-const SliderWrapper = tw.div`mx-6 my-3`;
+const SliderWrapper = tw.div`
+  mx-6 my-3
+ sm:mx-0 w-2/5
+`;
 // lg:mt-10 lg:ml-7
 
 const StyledSlider = tw(Slider)`
   mx-auto mb-5 
-  w-ImgBoxW h-ImgBoxH 
+  h-ImgBoxH w-ImgBoxW
   lg:h-[200px] lg:w-[250px]
-  md:h-auto md:w-[300px]
-  sm:h-[100px] sm:w-[200px]
+  md:h-auto md:w-10/12
+  lgtoxl:w-10/12 mtoxl:mx-4
+  sm:h-[100px] sm:w-10/12
   items-center
 `;

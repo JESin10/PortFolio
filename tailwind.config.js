@@ -11,6 +11,7 @@ module.exports = {
       xxl: { min: "1281px" }, // => @media (min-width: 1280px)
       stom: { min: "350px", max: "640px" },
       mtoxl: { min: "641px" },
+      lgtoxl: { min: "1024px" },
     },
     extend: {
       colors: {

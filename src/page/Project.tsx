@@ -28,27 +28,30 @@ export default function Project() {
       {projectData.length > 0 &&
         projectData.map((data: ProjectProps, index: number) => (
           <ProjectContainer key={index}>
-            <CategoryTitle className="title my-4">
+            <CategoryTitle className="title">
               # {data.projectscale}
             </CategoryTitle>
             <ProjectsContainer className="Container">
               <Carousel>
                 {data.img &&
                   data.img.map(
-                    (images: string | undefined, imgageIndex: any) => (
+                    (images: string | undefined, imageIndex: any) => (
                       <ProjectImg
-                        key={imgageIndex}
+                        key={imageIndex}
                         className="proImg"
                         src={images}
                       />
                     )
                   )}
               </Carousel>
-              <div className="MainDesc mtoxl:ml-10 my-auto">
+              <div className="MainDesc stom:ml-0 mtoxl:ml-10 my-auto">
                 <div key={index} className="font-bold text-2xl mt-3 mr-3">
                   {data.title}
                 </div>
-                <div key={data.date} className="ProjectDate mt-1 mb-8 sm:mb-5">
+                <div
+                  key={data.date}
+                  className="ProjectDate mt-1 mb-8 sm:mb-5 sm:text-xs"
+                >
                   {data.date}
                 </div>
                 <div className="sm:flex sm:gap-3 sm:w-fit">
@@ -90,7 +93,7 @@ export default function Project() {
                         >
                           <div className="flex items-center">
                             <Emphasis>
-                              <PostIcon src={loadImg.Depo} alt="Depoloyment" />
+                              <PostIcon src={loadImg.Depo} alt="Deployment" />
                               Depo ⏎
                             </Emphasis>
                           </div>
@@ -101,7 +104,10 @@ export default function Project() {
                 </div>
                 <div className="FeatureContainer inline-flex items-center mb-2">
                   <FaTools />
-                  <div key={data.id} className="featureConatiner ml-2 w-fit">
+                  <div
+                    key={data.id}
+                    className="featureContainer ml-2 w-fit sm:text-sm"
+                  >
                     {data.summary}
                   </div>
                 </div>
@@ -155,7 +161,10 @@ const ComponentTitle = tw.div`
 `;
 
 const CategoryTitle = tw.div`
-  font-bold text-2xl bg-Main text-white w-fit p-2 rounded-2xl`;
+  w-fit p-2 my-4
+  font-bold text-2xl bg-primary-Navy text-white rounded-2xl
+  sm:text-base sm:my-2
+  `;
 
 const Title = tw.div`
   font-bold text-lg mt-3 mr-3 p-1
@@ -167,24 +176,24 @@ const Emphasis = tw.div`
 `;
 
 const ProjectImg = tw.img`
-object-contain z-40 items-center
+  object-contain z-40 items-center
   h-ImgBoxH
   lg:h-[200px] lg:w-[250px]
-  md:h-[200px] md:w-[300px]
-  sm:h-[100px]
+  md:h-[200px] md:w-full
+  sm:h-auto sm:w-full
   bg-secondary-LightGray/50
 `;
 
 const ProjectsContainer = tw.div`
   flex items-start flex-row
-  sm:flex sm:flex-col
+  sm:flex sm:flex-col 
 `;
 
 const PostIcon = tw.img`w-4 h-4 mr-2`;
-const Linkdiv = tw.div`mb-2 hover:underline text-lg sm:text-sm`;
+const Linkdiv = tw.div`
+  mb-2 hover:underline text-lg sm:text-xs `;
 
 const ProjectContainer = tw.div`
   rounded-md p-6 border-black border-2 border-solid my-6
-  bg-white
-  hover:shadow-lg
+  bg-white hover:shadow-lg
 `;
