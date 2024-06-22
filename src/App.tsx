@@ -1,12 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import About from "./page/About";
 import Footer from "./page/Footer";
 import Menu from "./modules/Menu";
 import tw from "tailwind-styled-components";
 import Skills from "./page/Skills";
 import Project from "./page/Project";
+import { CiLight, CiDark } from "react-icons/ci";
 
 function App() {
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
+
+  const toggleDarkMode = (mode: boolean) => {
+    if (mode) {
+      document.documentElement.classList.add("dark"); // dark 모드 활성화
+    } else {
+      document.documentElement.classList.remove("dark"); // dark 모드 비활성화
+    }
+    setIsDarkMode(mode); // 상태 업데이트
+  };
+
   return (
     <>
       <PageContainer>
@@ -16,6 +28,19 @@ function App() {
           <Project />
           <Skills />
         </ContentContainer>
+        <DarkModeButton>
+          <div className="flex flex-col h-auto p-2 space-y-2">
+            <CiLight
+              className="hover:bg-white/20 rounded-full hover:fill-primary-Yellow_Highlight"
+              onClick={() => toggleDarkMode(false)}
+            />
+            <CiDark
+              className="hover:bg-white/20 rounded-full hover:fill-primary-Yellow_Highlight"
+              onClick={() => toggleDarkMode(true)}
+            />
+          </div>
+          {/* {isDarkMode ? <CiDark /> : <CiLight />} */}
+        </DarkModeButton>
       </PageContainer>
       <Footer />
     </>
@@ -32,4 +57,14 @@ const ContentContainer = tw.div`
 const PageContainer = tw.div`
   flex row-auto w-screen h-auto flex-col
   bg-primary-Navy/10
+  dark:bg-secondary-DarkNavy
+`;
+
+const DarkModeButton = tw.button`
+  fixed bottom-5 right-5 p-2
+  bg-gray-800 text-white
+  rounded-full
+
+  focus:outline-none focus:ring-2 focus:ring-gray-500
+
 `;

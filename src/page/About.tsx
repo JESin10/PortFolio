@@ -98,11 +98,15 @@ export default function About() {
 const AboutMain = tw.div`
   w-full md:w-11/12
   mt-TabH mx-auto px-2
+  
+  dark:text-white
 `;
 
 const Title = tw.div`
   font-bold text-3xl w-fit mb-4 p-2
   border-solid border-b-4 border-primary-Navy
+
+  dark:border-secondary-LightGray
 `;
 
 const FullContainer = tw.div`
@@ -116,13 +120,17 @@ const Namediv = tw.div`
   text-3xl font-bold 
   my-5 p-2 w-fit
   md:hidden
+
+  dark:border-secondary-LightGray
+
 `;
 
 const ProfileImg = tw.img`
   w-52 h-52 my-auto mx-2 bg-white
   border-solid border-4 border-primary-Navy rounded-full
-  md:w-40 md:h-40
-  sm:hidden
+  md:w-40 md:h-40 sm:hidden
+
+  dark:border-secondary-LightGray
 `;
 
 const ContactContainer = tw.div`text-right mt-5 space-x-1 flex justify-end`;
@@ -141,4 +149,4 @@ const InformationBtn = tw.div`
 `;
 
 const P = tw.p`mb-2`;
-const B = tw.span`font-bold bg-primary-Yellow_Highlight`;
+const B = tw.span`font-bold bg-primary-Yellow_Highlight dark:text-black`;
