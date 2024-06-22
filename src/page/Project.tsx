@@ -3,6 +3,9 @@ import tw from "tailwind-styled-components";
 import Carousel from "../modules/Carousel";
 import { loadImg } from "../assets/images";
 import { FaTools } from "react-icons/fa";
+import { IoLogoGithub } from "react-icons/io";
+import { SiVelog } from "react-icons/si";
+import { TbWorld } from "react-icons/tb";
 import { ProjectProps } from "../assets/interface";
 import { MyProjectData } from "../assets/Rtd";
 import HtmlStyle from "../modules/HtmlStyle";
@@ -57,12 +60,10 @@ export default function Project() {
                 <div className="sm:flex sm:gap-3 sm:w-fit">
                   <Linkdiv id="repo">
                     <a href={data.link.github} target="_blank" rel="noreferrer">
-                      <div className="flex items-center">
-                        <Emphasis>
-                          <PostIcon src={loadImg.Github} alt="Github" />
-                          Github ⏎
-                        </Emphasis>
-                      </div>
+                      <LinkContainer>
+                        <IoLogoGithub />
+                        <Emphasis>Github ⏎</Emphasis>
+                      </LinkContainer>
                     </a>
                   </Linkdiv>
                   {data.link.blog && (
@@ -73,12 +74,10 @@ export default function Project() {
                           target="_blank"
                           rel="noreferrer"
                         >
-                          <div className="flex items-center">
-                            <Emphasis>
-                              <PostIcon src={loadImg.Blog} alt="Velog" />
-                              Blog ⏎
-                            </Emphasis>
-                          </div>
+                          <LinkContainer>
+                            <SiVelog />
+                            <Emphasis>Blog ⏎</Emphasis>
+                          </LinkContainer>
                         </a>
                       </Linkdiv>
                     </>
@@ -91,12 +90,10 @@ export default function Project() {
                           target="_blank"
                           rel="noreferrer"
                         >
-                          <div className="flex items-center">
-                            <Emphasis>
-                              <PostIcon src={loadImg.Depo} alt="Deployment" />
-                              Depo ⏎
-                            </Emphasis>
-                          </div>
+                          <LinkContainer>
+                            <TbWorld />
+                            <Emphasis>Depo ⏎</Emphasis>
+                          </LinkContainer>
                         </a>
                       </Linkdiv>
                     </>
@@ -153,35 +150,54 @@ export default function Project() {
 
 const ProjectComponent = tw.div`
   w-full md:w-11/12 mx-auto px-2
+
+  dark:text-white
+`;
+
+const ProjectContainer = tw.div`
+  rounded-md p-6 border-black border-2 border-solid my-6
+  bg-white hover:shadow-lg
+
+  dark:bg-[#373737]
 `;
 
 const ComponentTitle = tw.div`
   font-bold text-3xl w-fit mb-4 p-2
   border-solid border-b-4 border-primary-Navy
+  
+  dark:border-secondary-LightGray
 `;
 
 const CategoryTitle = tw.div`
   w-fit p-2 my-4
   font-bold text-2xl bg-primary-Navy text-white rounded-2xl
   sm:text-base sm:my-2
+
+  dark:bg-primary-Yellow_Highlight dark:text-secondary-DarkNavy
   `;
 
 const Title = tw.div`
   font-bold text-lg mt-3 mr-3 p-1
   bg-primary-Navy/80 text-white w-fit
+
+    dark:bg-secondary-LightNavy dark:text-white
+
 `;
 
 const Emphasis = tw.div`
   font-bold inline-flex items-center mr-2 text-primary-Navy
+  dark:text-white dark:hover:text-primary-Yellow_Highlight
 `;
 
 const ProjectImg = tw.img`
   object-contain z-40 items-center
-  h-ImgBoxH
+  h-ImgBoxH 
   lg:h-[200px] lg:w-[250px]
-  md:h-[200px] md:w-full
-  sm:h-auto sm:w-full
+  md:h-auto md:w-fit
+  sm:h-auto sm:w-fit
   bg-secondary-LightGray/50
+
+  dark:bg-primary-Gray
 `;
 
 const ProjectsContainer = tw.div`
@@ -189,11 +205,5 @@ const ProjectsContainer = tw.div`
   sm:flex sm:flex-col 
 `;
 
-const PostIcon = tw.img`w-4 h-4 mr-2`;
-const Linkdiv = tw.div`
-  mb-2 hover:underline text-lg sm:text-xs `;
-
-const ProjectContainer = tw.div`
-  rounded-md p-6 border-black border-2 border-solid my-6
-  bg-white hover:shadow-lg
-`;
+const LinkContainer = tw.div`flex items-center space-x-2 dark:text-white dark:hover:text-primary-Yellow_Highlight`;
+const Linkdiv = tw.div`mb-2 hover:underline text-lg sm:text-xs `;

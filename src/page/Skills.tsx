@@ -30,7 +30,7 @@ export default function Skiils() {
     setButtonActive(SkillId);
   };
 
-  console.log(skillData);
+  // console.log(skillData);
 
   return (
     <Skill className="SkillPage" id="skill">
@@ -82,11 +82,15 @@ export default function Skiils() {
 const Skill = tw.div`
   w-full md:w-11/12 mx-auto px-2
   pb-10
+
+  dark:text-white
 `;
 
 const Title = tw.div`
   font-bold text-3xl w-fit mb-4 p-2
   border-solid border-b-4 border-primary-Navy
+
+  dark:border-secondary-LightGray
 `;
 
 const SubTitleBtn = tw.button`
@@ -94,6 +98,9 @@ const SubTitleBtn = tw.button`
   font-bold text-primary-Yellow_Highlight bg-primary-Navy
   cursor-pointer
   hover:border-primary-Navy hover:bg-primary-Navy/80
+
+  dark:bg-primary-Gray dark:text-primary-Navy
+  dark:hover:bg-secondary-LightGray dark:hover:text-secondary-DarkNavy
 `;
 
 const SkillWrapper = tw.div`
@@ -109,13 +116,20 @@ const SkillBox = tw.div`
   w-full p-6 rounded-md cursor-default bg-white
   border-2 border-secondary-LightGray border-solid 
   hover:border-primary-Navy hover:bg-gray-100 
+
+  dark:bg-secondary-DarkNavy dark:hover:border-primary-Yellow_Highlight
+
     ${(props: { $active: boolean }) =>
-      props.$active ? "border-4 border-primary-Navy" : ""}
+      props.$active ? "border-4 border-primary-Yellow_Highlight" : ""}
+
+  
 `;
 
 const SkillTitle = tw.div`
   font-bold text-xl text-primary-Navy
   sm:text-sm 
+
+  dark:text-primary-Yellow_Highlight
 `;
 
 const SkillContentBox = tw.ul`mt-3 sm:text-sm`;

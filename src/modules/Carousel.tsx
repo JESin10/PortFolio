@@ -11,7 +11,11 @@ const NextArrow = ({
   ...props
 }: CustomArrowProps) => (
   <div {...props}>
-    <FaAngleRight className="NextArrow" size="30px" color="black" />
+    <FaAngleRight
+      className="NextArrow dark:fill-white"
+      size="30px"
+      color="black"
+    />
   </div>
 );
 
@@ -22,10 +26,10 @@ const PrevArrow = ({
 }: CustomArrowProps) => (
   <div {...props}>
     <FaAngleLeft
-      className="PrevArrow"
+      className="PrevArrow dark:fill-white ml-[-10px]"
       size="30px"
       color="black"
-      style={{ marginRight: "10px" }}
+      style={{ marginRight: "30px" }}
     />
   </div>
 );
@@ -56,13 +60,12 @@ const Carousel = ({ children }: CarouselProps) => {
       //     slidesToScroll: 1, // 스크롤 시 이동할 슬라이드 수
       //   },
       // },
-      // {
-      //   breakpoint: 480, // 화면 너비가 480px 이하일 때 적용
-      //   settings: {
-      //     slidesToShow: 1, // 한 번에 보여질 슬라이드 수
-      //     slidesToScroll: 1, // 스크롤 시 이동할 슬라이드 수
-      //   },
-      // },
+      {
+        breakpoint: 425, // 화면 너비가 425px 이하일 때 적용
+        settings: {
+          arrows: false, // 도트 인디케이터 표시 여부
+        },
+      },
     ],
   };
 
@@ -78,17 +81,20 @@ const Carousel = ({ children }: CarouselProps) => {
 export default Carousel;
 
 const SliderWrapper = tw.div`
-  mx-6 my-3
- sm:mx-0 w-2/5
+  mx-6 my-3 
+ sm:mx-0 w-full
+ lgtoxl:w-2/5 
+
 `;
 // lg:mt-10 lg:ml-7
 
 const StyledSlider = tw(Slider)`
   mx-auto mb-5 
-  h-ImgBoxH w-ImgBoxW
+  h-ImgBoxH w-fti
   lg:h-[200px] lg:w-[250px]
-  md:h-auto md:w-10/12
+  md:h-auto md:w-full
   lgtoxl:w-10/12 mtoxl:mx-4
-  sm:h-[100px] sm:w-10/12
+  sm:h-[100px] sm:w-full
   items-center
+
 `;

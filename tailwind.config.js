@@ -1,6 +1,6 @@
 module.exports = {
   purge: ["./src/**/*.{js,jsx,ts,tsx}"],
-  darkmode: "class",
+  darkMode: "class",
   // main color setting 가능
   theme: {
     screens: {
@@ -22,6 +22,7 @@ module.exports = {
           Red: "#ce5353",
         },
         secondary: {
+          DarkNavy: "#001e3d",
           LightNavy: "#4C7093",
           LightGray: "#d9d9d9",
           DarkerYellow: "#dfda5a",
