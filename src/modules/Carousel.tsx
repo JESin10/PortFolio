@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick-theme.css";
 import tw from "tailwind-styled-components";
 import Slider, { CustomArrowProps } from "react-slick";
 import { FaAngleRight, FaAngleLeft } from "react-icons/fa";
+import "./Carousel.css";
 
 const NextArrow = ({
   currentSlide,
@@ -67,6 +68,20 @@ const Carousel = ({ children }: CarouselProps) => {
         },
       },
     ],
+    appendDots: (dots: any) => (
+      <div
+        style={{
+          width: "100%",
+          marginTop: "10px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <ul> {dots} </ul>
+      </div>
+    ),
+    dotsClass: "dots_custom",
   };
 
   return (
@@ -81,20 +96,19 @@ const Carousel = ({ children }: CarouselProps) => {
 export default Carousel;
 
 const SliderWrapper = tw.div`
-  mx-6 my-3 
+  mx-6 my-3 justify-center flex
  sm:mx-0 w-full
- lgtoxl:w-2/5 
+ lgtoxl:w-[55%]
 
 `;
 // lg:mt-10 lg:ml-7
 
 const StyledSlider = tw(Slider)`
   mx-auto mb-5 
-  h-ImgBoxH w-fti
+  h-ImgBoxH w-fit
   lg:h-[200px] lg:w-[250px]
   md:h-auto md:w-full
   lgtoxl:w-10/12 mtoxl:mx-4
   sm:h-[100px] sm:w-full
   items-center
-
 `;
