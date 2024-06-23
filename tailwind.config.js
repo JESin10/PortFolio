@@ -35,7 +35,7 @@ module.exports = {
         SkillBoxW2: "300px",
         SkillBoxH2: "150px",
         TabH: "125px",
-        FooterH: "100px",
+        FooterH: "300px",
         MenuW: "250px",
         onePage: "1117px",
         BtnW: "170px",

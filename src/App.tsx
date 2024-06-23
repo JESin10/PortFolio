@@ -51,7 +51,7 @@ export default App;
 
 const ContentContainer = tw.div`
   space-y-10 mx-auto h-auto
-  md:w-full w-2/3
+  md:w-full w-8/12
 `;
 
 const PageContainer = tw.div`
@@ -62,7 +62,7 @@ const PageContainer = tw.div`
 
 const DarkModeButton = tw.button`
   fixed bottom-5 right-5 p-2
-  bg-gray-800 text-white
+  bg-secondary-LightNavy text-white
   rounded-full
 
   focus:outline-none focus:ring-2 focus:ring-gray-500
