@@ -16,24 +16,27 @@ export default function About() {
             <div className="flex-col w-full px-2 h-full my-auto">
               <Namediv>신은진</Namediv>
               <ContactContainer className="contact">
-                <div className="flex-col w-1/2 space-y-4">
+                <div className="flex-col w-2/3 space-y-4">
                   <InformationBtn
                     aria-label="resume-button"
                     title="Notion-Resume"
                   >
                     <a
+                      className="flex space-x-3"
                       href="https://jin29.notion.site/JIN-42b3553e77554948b564f2f93e62a4cb?pvs=4"
                       target="_blank"
                       rel="noreferrer"
                       aria-label="resume-link"
                     >
                       <IoDocumentAttach size={"22px"} />
+                      <p>이력서</p>
                       {/* <BtnImg src={loadImg.Resume} alt="Resume" /> */}
                     </a>
                   </InformationBtn>
                   {/* <div>내의 요소인 title을 활용하면 마우스 오버시 title이 나타나게 된다 */}
                   <InformationBtn aria-label="email-button" title="Mail">
                     <a
+                      className="flex space-x-3"
                       href="mailto:shinej1029@gmail.com"
                       target="_blank"
                       rel="noreferrer"
@@ -41,6 +44,11 @@ export default function About() {
                     >
                       {/* <FaEnvelope size="50px" /> */}
                       <IoMail size={"22px"} />
+                      <p className="sm:hidden inline-flex flex-wrap">
+                        shinej1029@gmail.com
+                      </p>
+                      <p className="mtoxl:hidden sm:visible">Mail </p>
+
                       {/* <BtnImg src={loadImg.Email} alt="Mail" /> */}
                     </a>
                   </InformationBtn>
@@ -48,6 +56,7 @@ export default function About() {
                 <div className="flex-col w-1/2 space-y-4">
                   <InformationBtn aria-label="github-button">
                     <a
+                      className="flex space-x-3"
                       href="https://github.com/JESin10"
                       target="_blank"
                       rel="noreferrer"
@@ -55,17 +64,20 @@ export default function About() {
                     >
                       {/* <FaGithubSquare size="50px" /> */}
                       <IoLogoGithub size={"22px"} />
+                      <p>@JESin10</p>
                       {/* <BtnImg src={loadImg.Github} alt="Github" title="Github" /> */}
                     </a>
                   </InformationBtn>
                   <InformationBtn aria-label="blog-button">
                     <a
+                      className="flex space-x-3"
                       href="https://velog.io/@jin_s/"
                       target="_blank"
                       rel="noreferrer"
                       aria-label="blog-link"
                     >
                       <SiVelog size={"22px"} />
+                      <p>@jin_s</p>
                       {/* <BtnImg src={loadImg.Blog} alt="Velog" title="Velog" /> */}
                     </a>
                   </InformationBtn>
@@ -75,14 +87,14 @@ export default function About() {
           </div>
           <div>
             <div className="Comment my-2 sm:hidden">
-              <p className="text-base sm:text-md">
-                안녕하세요! 끊임없이 걸어가는 프론트엔드 개발자 신은진입니다.
-              </p>
+              <P className="text-base sm:text-md">
+                끊임없이 걸어가는 프론트엔드 개발자 신은진입니다.
+              </P>
             </div>
             <div className="Comment my-2 mtoxl:hidden sm:visibility">
-              <p className="text-base">
-                안녕하세요! 끊임없이 걸어가는 프론트엔드 개발자 신은진입니다.
-              </p>
+              <P className="text-base">
+                끊임없이 걸어가는 프론트엔드 개발자 신은진입니다.
+              </P>
             </div>
             <div className="DescriptionContainer">
               <div className="DescList my-4 text-sm flex-col space-y-4">
@@ -133,7 +145,8 @@ const FullContainer = tw.div`
   sm:flex-col md:gap-2 py-10
   items-center shadow-lg
   bg-white my-14 rounded-[70px]
-
+  
+  dark:bg-transparent
 `;
 
 const Namediv = tw.div`
@@ -147,10 +160,10 @@ const Namediv = tw.div`
 `;
 
 const ProfileImg = tw.img`
-  w-44 h-44 m-10 
-  md:w-40 md:h-40 sm:hidden
+  w-40 h-40 m-10 
+  lg:w-32 lg:h-32 lg:m-6 sm:hidden
 
-  dark:border-secondary-LightGray
+  dark:bg-white dark:rounded-full
 `;
 
 const ContactContainer = tw.div`
@@ -169,8 +182,9 @@ const InfoContainer = tw.div`
 const InformationBtn = tw.div`
   w-full h-8 sm:w-full sm:h-8
   flex px-4 items-center
-  cursor-pointer
+  cursor-pointer hover:font-bold hover:underline
+  dark:hover:text-primary-Yellow_Highlight
 `;
 
-const P = tw.p`mb-2`;
+const P = tw.p`font-bold`;
 const B = tw.span`font-bold bg-primary-Yellow_Highlight dark:text-black`;

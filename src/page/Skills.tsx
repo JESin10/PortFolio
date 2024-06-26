@@ -85,6 +85,7 @@ const Skill = tw.div`
 
 const Title = tw.div`
   font-bold text-3xl w-full mb-20 p-2
+  sm:mb-10
   border-solid border-b-4 border-primary-Navy
 
   dark:border-secondary-LightGray
@@ -96,7 +97,7 @@ const SubTitleBtn = tw.button`
   cursor-pointer
   hover:border-primary-Navy hover:bg-primary-Navy
 
-  dark:bg-primary-Gray dark:text-primary-Navy
+  dark:bg-white dark:text-primary-Navy
   dark:hover:bg-secondary-LightGray dark:hover:text-secondary-DarkNavy
 `;
 
@@ -112,14 +113,17 @@ const SkillWrapper = tw.div`
 
 const SkillBox = tw.div`
   w-full p-7 rounded-[45px] cursor-default bg-white
-  border-2 border-secondary-LightGray border-none 
+  border-2 border-none 
   hover:border-primary-Navy hover:bg-gray-100 
   shadow-md
 
-  dark:bg-secondary-DarkNavy dark:hover:border-primary-Yellow_Highlight
+  dark:bg-transparent dark:border-white dark:border-solid
+  dark:hover:bg-white/10
 
     ${(props: { $active: boolean }) =>
-      props.$active ? "border-2 border-primary-Navy" : ""}
+      props.$active
+        ? "border-solid border-primary-Navy dark:border-secondary-DarkerYellow"
+        : ""}
 
   
 `;
@@ -131,4 +135,4 @@ const SkillTitle = tw.div`
   dark:text-primary-Yellow_Highlight
 `;
 
-const SkillContentBox = tw.ul`mt-3 sm:text-sm`;
+const SkillContentBox = tw.ul`mt-3 sm:text-sm text-sm`;

@@ -38,7 +38,9 @@ export default function Footer() {
             </a>
           </FooterBtn>
         </ButtonContainer>
-        <p className="sm:text-sm">© 2023. ShinEunJin. All rights reserved.</p>
+        <p className="sm:text-sm mt-6">
+          © 2023. ShinEunJin. All rights reserved.
+        </p>
       </div>
     </FooterContainer>
   );
@@ -53,6 +55,8 @@ const FooterBtn = tw.div``;
 const FooterContainer = tw.div`
   w-full h-FooterH bg-secondary-LightGray text-md
   text-center font-bold my-auto flex justify-center items-center
+  
+  dark:bg-black/90 dark:text-white
 `;
 
 const ImgBtn = tw.img`
@@ -60,4 +64,5 @@ const ImgBtn = tw.img`
   border-none m-2 
   sm:w-7 sm:h-7 sm:m-2 sm:p-1
   hover:bg-primary-Gray/50
+
 `;

@@ -46,7 +46,7 @@ export default function Project() {
                       )
                     )}
                 </Carousel>
-                <div id="MainDesc" className="my-auto w-[40%] ">
+                <div id="MainDesc" className="my-auto w-[40%] sm:w-full ">
                   <div key={index} className="font-bold text-2xl mt-3 mr-3">
                     {data.title}
                   </div>
@@ -107,8 +107,9 @@ export default function Project() {
                       <FaTools />
                     </p>
                     <div
+                      id="featureContainer"
                       key={data.id}
-                      className="featureContainer ml-2 w-fit sm:text-sm leading-[180%]"
+                      className="ml-2 w-fit sm:text-xs leading-[180%]"
                     >
                       {data.summary}
                     </div>
@@ -122,7 +123,7 @@ export default function Project() {
                 )}*/}
                 </div>
               </ProjectsContainer>
-              <div className="Container mx-4">
+              <div id="Contents-Container" className="mx-4 sm:mx-0">
                 <SubTitle>FE Skill</SubTitle>
                 <ContentTag id="FE-skill">{data.skill.fe_skill}</ContentTag>
                 <br />
@@ -138,7 +139,7 @@ export default function Project() {
                   {data.desc.map((descItem: any, descIndex: number) => (
                     <div
                       key={descIndex}
-                      className="text-lg sm:text-sm mx-8 my-4"
+                      className="text-lg mx-8 my-4 sm:mx-2 sm:text-sm sm:my-2"
                     >
                       {HtmlStyle(descItem.content)}
                     </div>
@@ -162,15 +163,17 @@ const ProjectComponent = tw.div`
 const ProjectContainer = tw.div`
   rounded-[70px] px-6 my-24 py-16
   bg-white hover:shadow-lg
+  sm:my-10
 
-  dark:bg-[#373737]
+  dark:bg-transparent
+  dark:border-solid dark:border-2 dark-border-white
 `;
 
 const ComponentTitle = tw.div`
   font-bold text-3xl w-full mb-4 p-2
   border-solid border-b-4 border-primary-Navy
-  
   dark:border-secondary-LightGray
+  
 `;
 
 const CategoryTitle = tw.div`
@@ -184,6 +187,7 @@ const CategoryTitle = tw.div`
 const SubTitle = tw.div`
   font-bold text-base px-3 py-2 my-8 rounded-3xl
   bg-primary-Navy/80 text-white w-fit
+  sm:text-sm sm:my-3
 
    dark:bg-secondary-LightNavy dark:text-white
 `;
@@ -201,7 +205,7 @@ const ProjectImg = tw.img`
   sm:h-auto sm:w-fit
   bg-secondary-LightGray/50
 
-  dark:bg-primary-Gray
+
 `;
 
 const ProjectsContainer = tw.div`
@@ -211,6 +215,7 @@ const ProjectsContainer = tw.div`
 
 const ContentTag = tw.span`
   my-3 mx-8 font-semibold inline-flex
+  sm:mx-2 sm:text-sm sm:my-2
 `;
 
 const LinkContainer = tw.div`flex items-center space-x-2 dark:text-white dark:hover:text-primary-Yellow_Highlight`;
