@@ -29,9 +29,9 @@ function App() {
           <Skills />
         </ContentContainer>
         <DarkModeButton>
-          <div className="flex flex-col h-auto p-2 space-y-2">
+          <div className="flex flex-col h-[90%] space-y-3 p-2 justify-between">
             <CiLight
-              className="hover:bg-white/20 rounded-full hover:fill-primary-Yellow_Highlight"
+              className="hover:bg-white/20 rounded-full hover:fill-primary-Yellow_Highlight  "
               onClick={() => toggleDarkMode(false)}
             />
             <CiDark
@@ -57,13 +57,13 @@ const ContentContainer = tw.div`
 const PageContainer = tw.div`
   flex row-auto w-screen h-auto flex-col
   bg-primary-Navy/10
-  dark:bg-secondary-DarkNavy
+  dark:bg-[#2b2b2b]
 `;
 
 const DarkModeButton = tw.button`
-  fixed bottom-5 right-5 p-2
+  fixed bottom-10 lgtoxl:bottom-20 lgtoxl:right-20 p-2 right-10
   bg-secondary-LightNavy text-white
-  rounded-full
+  rounded-full 
 
   focus:outline-none focus:ring-2 focus:ring-gray-500
 
