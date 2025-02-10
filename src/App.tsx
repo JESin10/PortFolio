@@ -28,7 +28,7 @@ function App() {
           <Project />
           <Skills />
         </ContentContainer>
-        <DarkModeButton>
+        {/* <DarkModeButton>
           <div className="flex flex-col h-[90%] space-y-3 p-2 justify-between">
             <CiLight
               className="hover:bg-white/20 rounded-full hover:fill-primary-Yellow_Highlight  "
@@ -39,8 +39,7 @@ function App() {
               onClick={() => toggleDarkMode(true)}
             />
           </div>
-          {/* {isDarkMode ? <CiDark /> : <CiLight />} */}
-        </DarkModeButton>
+        </DarkModeButton> */}
       </PageContainer>
       <Footer />
     </>
