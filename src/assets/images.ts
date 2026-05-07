@@ -18,6 +18,13 @@ export const loadImg = {
   ArtMate_P3: "./image/ArtMate/ArtMate_Page2.jpg",
   ArtMate_B: "./image/ArtMate/ArtMate_Banner.png",
 
+  ArtMateMobile_P1: "./image/ArtMateApp/ArtMateApp_Main1.png",
+  ArtMateMobile_P2: "./image/ArtMateApp/ArtMateApp_Main2.png",
+  ArtMateMobile_P3: "./image/ArtMateApp/ArtMateApp_Art1.png",
+  ArtMateMobile_P4: "./image/ArtMateApp/ArtMateApp_Art2.png",
+  ArtMateMobile_P5: "./image/ArtMateApp/ArtMateApp_Gall1.png",
+  ArtMateMobile_P6: "./image/ArtMateApp/ArtMateApp_Gall2.png",
+
   Bucket_P1: "./image/BucketList/Bucket_Dashboard_all.png",
   Bucket_P2: "./image/BucketList/Bucket_Dashboard_tr.png",
   Bucket_P3: "./image/BucketList/Bucket_Explore_fun.png",
