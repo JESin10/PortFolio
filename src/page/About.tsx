@@ -37,7 +37,7 @@ export default function About() {
                   >
                     <a
                       className="flex space-x-3"
-                      href="https://jin29.notion.site/JIN-42b3553e77554948b564f2f93e62a4cb?pvs=4"
+                      href="https://jin29.notion.site/JIN-cc228b8b4a41409ab92466fae7658d80?source=copy_link"
                       target="_blank"
                       rel="noreferrer"
                       aria-label="resume-link"
