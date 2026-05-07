@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@notionhq/client": "^5.20.0",
     "@reduxjs/toolkit": "^2.2.5",
     "@testing-library/jest-dom": "^6.4.6",
     "@testing-library/react": "^16.0.0",
@@ -14,8 +15,10 @@
     "@types/react-slick": "^0.23.13",
     "axios": "^1.7.2",
     "bootstrap": "^5.3.3",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
     "firebase": "^10.12.2",
-    "flowbite": "^2.3.0",
+    "flowbite": "^4.0.1",
     "json-server": "^1.0.0-beta.1",
     "react": "^18.3.1",
     "react-bootstrap": "^2.10.2",
@@ -55,6 +58,8 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "nodemon": "^3.1.14",
     "slick-carousel": "^1.8.1",
     "tailwind-styled-components": "^2.2.0",
     "tailwindcss": "^3.4.4"

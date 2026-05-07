@@ -1,10 +1,24 @@
-import { loadImg } from "../assets/images";
-import tw from "tailwind-styled-components";
-import { IoDocumentAttach, IoMail } from "react-icons/io5";
+import { useState } from "react";
 import { IoLogoGithub } from "react-icons/io";
+import { IoDocumentAttach, IoMail } from "react-icons/io5";
 import { SiVelog } from "react-icons/si";
+import tw from "tailwind-styled-components";
+// import { getProjects } from "../api";
+import { loadImg } from "../assets/images";
 
 export default function About() {
+  const [projects, setProjects] = useState([]);
+
+// useEffect(() => {
+//   const fetchData = async () => {
+//     const data = await getProjects();
+//     console.log('data:', data);
+//   };
+
+//   fetchData();
+// }, []);
+  
+  
   return (
     <AboutMain id="about">
       <Title className="Title">About</Title>
